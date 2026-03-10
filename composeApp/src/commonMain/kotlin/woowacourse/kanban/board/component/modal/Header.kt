@@ -29,7 +29,7 @@ fun Header() {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
-            .padding(top = 24.dp)
+            .padding(horizontal = 24.dp)
             .fillMaxWidth()
     ) {
         Text(
