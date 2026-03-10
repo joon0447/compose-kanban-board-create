@@ -39,8 +39,7 @@ fun TextInputSection(
 ) {
     var title by remember { mutableStateOf("") }
     Column(
-        modifier = modifier.fillMaxWidth()
-            .padding(24.dp),
+        modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
