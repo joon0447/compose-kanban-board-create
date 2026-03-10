@@ -1,14 +1,18 @@
 package woowacourse.kanban.board.component.modal
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -27,41 +31,48 @@ private fun FooterPreview() {
 
 @Composable
 fun Footer() {
-    Row(
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 24.dp),
-        horizontalArrangement = Arrangement.End
+            .padding(horizontal = 24.dp)
     ) {
-        Button(
-            onClick = {},
+        HorizontalDivider()
+        Spacer(modifier = Modifier.height(8.dp))
+        Row(
             modifier = Modifier
-                .clip(RoundedCornerShape(10.dp)),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color.Transparent,
-                contentColor = Color(0xFF364153)
-            )
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.End,
         ) {
-            Text(
-                text = "취소",
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Normal
-            )
-        }
-        Spacer(modifier = Modifier.width(12.dp))
-        Button(
-            onClick = {},
-            modifier = Modifier
-                .clip(RoundedCornerShape(10.dp)),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF4F39F6)
-            )
-        ) {
-            Text(
-                text = "생성",
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Normal
-            )
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .clip(RoundedCornerShape(10.dp)),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Transparent,
+                    contentColor = Color(0xFF364153),
+                ),
+            ) {
+                Text(
+                    text = "취소",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Normal,
+                )
+            }
+            Spacer(modifier = Modifier.width(12.dp))
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .clip(RoundedCornerShape(10.dp)),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF4F39F6),
+                ),
+            ) {
+                Text(
+                    text = "생성",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Normal,
+                )
+            }
         }
     }
 }
