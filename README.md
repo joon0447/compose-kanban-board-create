@@ -1,40 +1,30 @@
-This is a Kotlin Multiplatform project targeting Android, Desktop (JVM).
+# 칸반 보드 태스크(리팩터링)
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+# 기능 구현 사항
 
-### Build and Run Android Application
+## 리팩토링 
+- [x] TaskCardData 클래스 추가
+- [x] 태그 최대 개수, 태그 당 최대 글자 수 입력 받도록 변경
+- [x] Color 클래스 변경하기
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
 
-### Build and Run Desktop (JVM) Application
+## 테스트 시나리오
+- [x] 단위 테스트 구현하기
+  - TaskCardData의 모든 값이 빈 값 또는 null 이 아니면 예외가 발생하지 않는다.
+  - TaskCardData의 script만 빈 값이 들어오면 예외가 발생하지 않는다.
+  - TaskCardData의 tags만 빈 값이 들어오면 예외가 발생하지 않는다.
+  - TaskCardData의 title이 빈 값이면 예외가 발생한다.
+  - TaskCardData의 title이 null이면 예외가 발생한다.
+  - TaskCardData의 script가 null이면 예외가 발생한다.
+  - TaskCardData의 tags가 null이면 예외가 발생한다.
+  - TaskCardData의 nickname이 null이면 예외가 발생한다.
+  - TaskCardData의 nickname이 빈 값이면 예외가 발생한다.
 
-To build and run the development version of the desktop app, use the run configuration from the run widget
-in your IDE’s toolbar or run it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:run
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:run
-  ```
-
----
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+- [x] UI 테스트 구현하기
+  - Script에 빈 값이 들어오면 Script 컴포넌트가 출력되지 않는다.
+  - Script에 빈 값이 들어오지 않으면 Script 컴포넌트가 출력된다.
+  - Tags에 빈 태그 리스트가 들어오면 Tags 컴포넌트가 출력되지 않는다.
+  - Tags에 요소가 1개 이상인 태그 리스트가 들어오면 Tags 컴포넌트가 출력된다.
+  - Tags의 태그 최대 개수를 6개로 설정하면 6개까지 Tag 컴포넌트가 출력된다.
+  - TaskCardData의 모든 값이 빈 값, null이 아니면 title, script, tags, nickname 컴포넌트가 출력된다.
+  
