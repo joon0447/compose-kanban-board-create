@@ -29,8 +29,8 @@ fun Header() {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
+            .padding(top = 24.dp)
             .fillMaxWidth()
-            .padding(24.dp)
     ) {
         Text(
             text = "새 태스크 생성",
