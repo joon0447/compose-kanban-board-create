@@ -53,7 +53,7 @@ fun TextInputSection(
             value = title,
             modifier = modifier
                 .fillMaxWidth()
-                .border(1.dp, Color(0xFF797472), RoundedCornerShape(4.dp)),
+                .border(1.dp, Color(0xFF79747E), RoundedCornerShape(4.dp)),
             placeholder = {
                 Text(
                     text = placeholder,
@@ -65,7 +65,8 @@ fun TextInputSection(
             colors = TextFieldDefaults.colors(
                 unfocusedContainerColor = Color.Transparent,
                 focusedContainerColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
             ),
             onValueChange = { title = it },
         )
