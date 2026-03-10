@@ -6,7 +6,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -34,7 +36,7 @@ import org.w3c.dom.Text
 @Composable
 @Preview(showBackground = true)
 private fun ButtonSectionPreview() {
-    ButtonSection("제목", listOf("1", "2"))
+    ButtonSection("제목", listOf("1", "2", "1", "1", "1"))
 }
 
 @Composable
@@ -42,7 +44,6 @@ fun ButtonSection(
     label: String,
     items: List<String>,
 ) {
-
     Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(8.dp),
@@ -53,15 +54,14 @@ fun ButtonSection(
             fontWeight = FontWeight.SemiBold,
             color = Color(0xFF364153),
         )
-        Row(
-            modifier = Modifier.height(52.dp),
+        FlowRow(
+            verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
-
         ) {
             for (item in items) {
                 Box(
                     modifier = Modifier
-                        .weight(1f)
+                        .width(120.dp)
                         .border(1.dp, color = Color(0xFFE5E7EB), shape = RoundedCornerShape(10.dp))
                         .padding(horizontal = 50.dp, vertical = 14.dp),
                 ) {
