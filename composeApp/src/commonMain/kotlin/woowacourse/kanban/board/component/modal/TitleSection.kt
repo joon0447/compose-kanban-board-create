@@ -33,7 +33,9 @@ private fun TitleSectionPreview() {
 @Composable
 fun TitleSection() {
     var title by remember { mutableStateOf("") }
-    Column() {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
         Text(
             text = "제목 *",
             fontSize = 14.sp,
