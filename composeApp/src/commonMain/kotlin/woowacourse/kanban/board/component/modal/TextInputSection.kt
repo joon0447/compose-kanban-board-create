@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -38,6 +39,8 @@ fun TextInputSection(
 ) {
     var title by remember { mutableStateOf("") }
     Column(
+        modifier = modifier.fillMaxWidth()
+            .padding(24.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
@@ -49,6 +52,7 @@ fun TextInputSection(
         TextField(
             value = title,
             modifier = modifier
+                .fillMaxWidth()
                 .border(1.dp, Color(0xFF797472), RoundedCornerShape(4.dp)),
             placeholder = {
                 Text(

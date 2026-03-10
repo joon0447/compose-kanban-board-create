@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -31,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.jetbrains.skia.paragraph.Alignment
 import org.w3c.dom.Text
 
 @Composable
@@ -55,13 +57,14 @@ fun ButtonSection(
             color = Color(0xFF364153),
         )
         FlowRow(
+            modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             for (item in items) {
                 Box(
                     modifier = Modifier
-                        .width(120.dp)
+                        .width(200.dp)
                         .border(1.dp, color = Color(0xFFE5E7EB), shape = RoundedCornerShape(10.dp))
                         .padding(horizontal = 50.dp, vertical = 14.dp),
                 ) {
