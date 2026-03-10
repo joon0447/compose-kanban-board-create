@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import woowacourse.kanban.board.component.TaskCard
+import woowacourse.kanban.board.component.taskcard.TaskCard
 import woowacourse.kanban.board.model.TaskCardData
 
 @Composable

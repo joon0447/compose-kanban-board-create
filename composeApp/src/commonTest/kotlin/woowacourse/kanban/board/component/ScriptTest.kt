@@ -5,6 +5,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.runComposeUiTest
+import woowacourse.kanban.board.component.taskcard.Script
 import kotlin.test.Test
 
 @OptIn(ExperimentalTestApi::class)

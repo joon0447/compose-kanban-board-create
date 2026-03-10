@@ -1,4 +1,4 @@
-package woowacourse.kanban.board.component
+package woowacourse.kanban.board.component.taskcard
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
