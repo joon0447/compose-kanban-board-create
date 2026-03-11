@@ -30,6 +30,7 @@ private fun ButtonSectionPreview() {
 @Composable
 fun ButtonSection() {
     var state by remember { mutableStateOf(0) }
+    var profile by remember { mutableStateOf(0) }
 
     Column(
         modifier = Modifier
@@ -49,7 +50,7 @@ fun ButtonSection() {
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             StateButton(text = "To do", state, onClick = { state = 0 }, id = 0)
-            StateButton(text = "In Progress", state, onClick = { state = 1}, id = 1)
+            StateButton(text = "In Progress", state, onClick = { state = 1 }, id = 1)
             StateButton(text = "Done", state, onClick = { state = 2 }, id = 2)
         }
         Text(
@@ -62,9 +63,9 @@ fun ButtonSection() {
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
-        ){
-            ProfileButton("다이노")
-            ProfileButton("페임스")
+        ) {
+            ProfileButton("다이노", profile, onClick = { profile = 0 }, id = 0)
+            ProfileButton("페임스", profile, onClick = { profile = 1 }, id = 1)
         }
 
     }
