@@ -43,21 +43,30 @@ fun Modal() {
             .width(800.dp)
             .padding(50.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
-        )
+            containerColor = Color.White,
+        ),
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(24.dp)
+            verticalArrangement = Arrangement.spacedBy(24.dp),
         ) {
             Header()
             HorizontalDivider()
             TextInputSection("제목", { TextInput("테스크 제목을 입력하세요") }, value = title)
             TextInputSection("설명", { TextInput("태스크에 대한 자세힌 설명을 입력하세요") }, value = description)
-            TextInputSection("태그", { TextInput("태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)") }, value = tags)
+            TextInputSection(
+                "태그",
+                {
+                    TextInput(
+                        "태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)",
+                        supportingText = "5자 이내의 태그를 최대 5개까지 등록할 수 있습니다.",
+                    )
+                },
+                value = tags,
+            )
             ButtonSection()
             Footer()
         }

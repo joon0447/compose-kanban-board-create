@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 fun TextInput(
     placeholder: String,
     modifier: Modifier = Modifier,
+    supportingText: String?= null
 ) {
     var value by remember { mutableStateOf("") }
     OutlinedTextField(
@@ -37,7 +38,11 @@ fun TextInput(
                 fontWeight = FontWeight.Normal,
             )
         },
-        supportingText = { Text(text = "dsdsa") },
+        supportingText = {
+            if(supportingText != null) {
+                Text(text = supportingText)
+            }
+        },
         colors = OutlinedTextFieldDefaults.colors(
             unfocusedBorderColor = Color(0xFFE5E7EB),
             focusedBorderColor = Color(0xFFE5E7EB),
