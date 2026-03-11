@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -44,6 +45,25 @@ fun TextInputSection(
     var description by remember { mutableStateOf("") }
     var tags by remember { mutableStateOf("") }
 
+    val isTitleEmpty by remember {
+        derivedStateOf {
+            title.isEmpty()
+        }
+    }
+
+    val isDescriptionLong by remember {
+        derivedStateOf {
+            description.length > 100
+        }
+    }
+
+    val isNotValidTag by remember {
+        derivedStateOf {
+            val extractedTags = tags.split(",")
+            extractedTags.size > 5 || extractedTags.any { it.isEmpty() || it.length > 5 }
+        }
+    }
+
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -55,6 +75,8 @@ fun TextInputSection(
             value = title,
             placeholder = "태스크 제목을 입력하세요",
             onTextChange = { title = it },
+            isError = isTitleEmpty,
+            errorText = "제목이 비어있으면 안됩니다."
         )
         TextInput(
             label = "설명",
@@ -63,13 +85,17 @@ fun TextInputSection(
             modifier = Modifier.height(200.dp),
             placeholder = "태스크에 대한 자세한 설명을 입력하세요",
             onTextChange = { description = it },
+            isError = isDescriptionLong,
+            errorText = "설명은 100자 이내로 입력해주세요."
         )
         TextInput(
             label = "태그 *",
             value = tags,
             placeholder = "태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)",
             onTextChange = { tags = it },
-            supportingText = "5자 이내에 태그를 최대 5개까지 등록할 수 있습니다."
+            supportingText = "5자 이내에 태그를 최대 5개까지 등록할 수 있습니다.",
+            isError = isNotValidTag,
+            errorText = "태그 형식이 올바르지 않습니다."
         )
     }
 }

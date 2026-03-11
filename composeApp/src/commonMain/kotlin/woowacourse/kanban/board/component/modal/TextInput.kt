@@ -27,8 +27,13 @@ fun TextInput(
     singleLine: Boolean = true,
     onTextChange: (String) -> Unit,
     modifier: Modifier = Modifier,
-    supportingText: String?= null
+    supportingText: String?= null,
+    isError: Boolean,
+    errorText: String
 ) {
+    var borderColor = if (isError) Color(0xFFB3261E) else Color(0xFFE5E7EB)
+    var textColor = if (isError) Color(0xFFB3261E) else Color(0xFF364153)
+
     Text(
         text = label,
         fontSize = 14.sp,
@@ -49,15 +54,23 @@ fun TextInput(
             )
         },
         supportingText = {
-            if(supportingText != null) {
+            if (isError){
+                Text(
+                    text = errorText,
+                    color = textColor
+                )
+            }
+            else if(supportingText != null) {
                 Text(text = supportingText)
             }
         },
         colors = OutlinedTextFieldDefaults.colors(
-            unfocusedBorderColor = Color(0xFFE5E7EB),
-            focusedBorderColor = Color(0xFFE5E7EB),
+            unfocusedBorderColor = borderColor,
+            focusedBorderColor = borderColor,
             unfocusedContainerColor = Color.Transparent,
             focusedContainerColor = Color.Transparent,
+            unfocusedTextColor = textColor,
+            focusedTextColor = textColor
         ),
         onValueChange = onTextChange,
     )
