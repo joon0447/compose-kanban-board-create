@@ -3,6 +3,8 @@ package woowacourse.kanban.board.component.modal
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -18,26 +20,29 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TextInput(placeholder: String ,modifier: Modifier = Modifier) {
+fun TextInput(
+    placeholder: String,
+    modifier: Modifier = Modifier,
+) {
     var value by remember { mutableStateOf("") }
-    TextField(
+    OutlinedTextField(
         value = value,
         modifier = modifier
-            .fillMaxWidth()
-            .border(1.dp, Color(0xFF79747E), RoundedCornerShape(4.dp)),
+            .fillMaxWidth(),
         placeholder = {
             Text(
                 text = placeholder,
                 color = Color(0xFFAAAAAA),
                 fontSize = 16.sp,
-                fontWeight = FontWeight.Normal
+                fontWeight = FontWeight.Normal,
             )
         },
-        colors = TextFieldDefaults.colors(
+        supportingText = { Text(text = "dsdsa") },
+        colors = OutlinedTextFieldDefaults.colors(
+            unfocusedBorderColor = Color.Gray,
+            focusedBorderColor = Color.Gray,
             unfocusedContainerColor = Color.Transparent,
             focusedContainerColor = Color.Transparent,
-            focusedIndicatorColor = Color.Transparent,
-            unfocusedIndicatorColor = Color.Transparent
         ),
         onValueChange = { value = it },
     )

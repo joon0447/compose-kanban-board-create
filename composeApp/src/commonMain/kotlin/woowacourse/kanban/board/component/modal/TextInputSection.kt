@@ -30,9 +30,9 @@ import androidx.compose.ui.unit.sp
 @Composable
 @Preview(showBackground = true)
 private fun TextInputSectionPreview() {
-    Column {
-        TextInputSection("제목", { TextInput("테스크 제목을 입력하세요.", Modifier.height(50.dp)) })
-        TextInputSection("설명", { TextInput("테스크에 대한 자세한 설명을 입력하세요", Modifier.height(100.dp)) })
+    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        TextInputSection("제목", { TextInput("테스크 제목을 입력하세요.") })
+        TextInputSection("설명", { TextInput("테스크에 대한 자세한 설명을 입력하세요") })
     }
 
 }
@@ -41,13 +41,13 @@ private fun TextInputSectionPreview() {
 fun TextInputSection(
     label: String,
     content: @Composable () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 24.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
             text = label,

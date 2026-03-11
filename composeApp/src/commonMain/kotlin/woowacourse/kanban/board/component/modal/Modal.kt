@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,9 +43,7 @@ fun Modal() {
         ) {
             Header()
             HorizontalDivider()
-            TextInputSection("제목", "태스크 제목을 입력하세요")
-            TextInputSection("설명", "태스크에 대한 자세한 설명을 입력하세요", Modifier.height(200.dp))
-            TextInputSection("태그", "태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)")
+            TextInputSection("제목", { TextInput("테스크 제목을 입력하세요.", Modifier.height(50.dp)) })
             ButtonSection("상태", listOf("To Do", "In Progress", "Done"))
             ButtonSection("담당자", listOf("다이노", "페임스"))
             Footer()
