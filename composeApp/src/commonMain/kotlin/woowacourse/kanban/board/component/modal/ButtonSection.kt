@@ -7,6 +7,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -25,6 +29,8 @@ private fun ButtonSectionPreview() {
 
 @Composable
 fun ButtonSection() {
+    var state by remember { mutableStateOf(0) }
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -42,9 +48,9 @@ fun ButtonSection() {
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            StateButton(text = "To do")
-            StateButton(text = "In Progress")
-            StateButton(text = "Done")
+            StateButton(text = "To do", state, onClick = { state = 0 }, id = 0)
+            StateButton(text = "In Progress", state, onClick = { state = 1}, id = 1)
+            StateButton(text = "Done", state, onClick = { state = 2 }, id = 2)
         }
         Text(
             text = "담당자",
