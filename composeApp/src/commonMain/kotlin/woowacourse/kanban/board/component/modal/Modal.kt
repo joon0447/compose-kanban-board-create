@@ -54,8 +54,7 @@ fun Modal() {
             Header()
             HorizontalDivider()
             TextInputSection("제목", { TextInput("테스크 제목을 입력하세요.") }, value = title)
-            ButtonSection("상태", listOf("To Do", "In Progress", "Done"))
-            ButtonSection("담당자", listOf("다이노", "페임스"))
+            ButtonSection("상태", listOf("To Do", "In Progress", "Done"), { CustomButton(it)})
             Footer()
         }
     }

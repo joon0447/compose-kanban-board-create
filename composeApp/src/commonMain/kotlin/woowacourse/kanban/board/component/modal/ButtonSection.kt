@@ -36,13 +36,19 @@ import androidx.compose.ui.unit.sp
 @Composable
 @Preview(showBackground = true)
 private fun ButtonSectionPreview() {
-    ButtonSection("제목", listOf("1", "2", "1", "1", "1"))
+    val list = listOf("To Do", "In Progress", "Done")
+    ButtonSection(
+        "제목",
+        list,
+        { CustomButton(it) },
+    )
 }
 
 @Composable
 fun ButtonSection(
     label: String,
     items: List<String>,
+    content: @Composable (String) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -61,23 +67,10 @@ fun ButtonSection(
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            for (item in items) {
-                Box(
-                    modifier = Modifier
-                        .width(200.dp)
-                        .border(1.dp, color = Color(0xFFE5E7EB), shape = RoundedCornerShape(10.dp))
-                        .padding(horizontal = 50.dp, vertical = 14.dp),
-                ) {
-                    Text(
-                        text = item,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth(),
-                        fontSize = 16.sp,
-                        color = Color(0xFF364153),
-                        fontWeight = FontWeight.Normal
-                    )
-                }
+            items.forEach {
+                content(it)
             }
         }
     }
 }
+
