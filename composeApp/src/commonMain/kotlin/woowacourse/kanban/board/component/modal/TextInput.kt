@@ -1,7 +1,9 @@
 package woowacourse.kanban.board.component.modal
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -18,6 +20,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kanbanboard.composeapp.generated.resources.Res
+import kanbanboard.composeapp.generated.resources.icon
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun TextInput(
@@ -52,6 +57,15 @@ fun TextInput(
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Normal,
             )
+        },
+        trailingIcon = {
+            if (isError) {
+                Image(
+                    painter = painterResource(Res.drawable.icon),
+                    contentDescription = "에러 아이콘",
+                    modifier = Modifier.size(20.dp)
+                )
+            }
         },
         supportingText = {
             if (isError){
