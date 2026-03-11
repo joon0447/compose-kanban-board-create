@@ -14,18 +14,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import javax.swing.ProgressMonitor
 
 @Composable
 @Preview(showBackground = true)
 private fun ButtonSectionPreview() {
     val list = listOf("To Do", "In Progress", "Done")
-    ButtonSection("제목",)
+    ButtonSection()
 }
 
 @Composable
-fun ButtonSection(
-    label: String
-) {
+fun ButtonSection() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -33,7 +32,7 @@ fun ButtonSection(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
-            text = label,
+            text = "상태",
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
             color = Color(0xFF364153),
@@ -48,11 +47,20 @@ fun ButtonSection(
             StateButton(text = "Done")
         }
         Text(
-            text = label,
+            text = "담당자",
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
             color = Color(0xFF364153),
         )
+        FlowRow(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ){
+            ProfileButton("다이노")
+            ProfileButton("페임스")
+        }
+
     }
 }
 

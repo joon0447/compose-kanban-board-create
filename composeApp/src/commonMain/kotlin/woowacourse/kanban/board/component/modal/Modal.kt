@@ -54,7 +54,7 @@ fun Modal() {
             Header()
             HorizontalDivider()
             TextInputSection("제목", { TextInput("테스크 제목을 입력하세요.") }, value = title)
-            ButtonSection("상태")
+            ButtonSection()
             Footer()
         }
     }
