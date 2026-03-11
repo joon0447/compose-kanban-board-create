@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import woowacourse.kanban.board.DefaultValue
 
 @Preview(showBackground = true)
 @Composable
@@ -50,14 +51,14 @@ fun Modal() {
 
     val isDescriptionLong by remember {
         derivedStateOf {
-            description.length > 100
+            description.length > DefaultValue.DESCRIPTION_MAX_TEXT_LENGTH
         }
     }
 
     val isNotValidTag by remember {
         derivedStateOf {
             val extractedTags = tags.split(",")
-            extractedTags.size > 5 || extractedTags.any { it.isEmpty() || it.length > 5 }
+            extractedTags.size > DefaultValue.MAX_TAGS || extractedTags.any { it.isEmpty() || it.length > DefaultValue.TAG_MAX_TEXT_LENGTH }
         }
     }
 
