@@ -36,6 +36,8 @@ private fun ModalPreview() {
 @Composable
 fun Modal() {
     var title by remember { mutableStateOf("") }
+    var description by remember { mutableStateOf("") }
+    var tags by remember { mutableStateOf("") }
     Card(
         modifier = Modifier
             .width(800.dp)
@@ -53,7 +55,9 @@ fun Modal() {
         ) {
             Header()
             HorizontalDivider()
-            TextInputSection("제목", { TextInput("테스크 제목을 입력하세요.") }, value = title)
+            TextInputSection("제목", { TextInput("테스크 제목을 입력하세요") }, value = title)
+            TextInputSection("설명", { TextInput("태스크에 대한 자세힌 설명을 입력하세요") }, value = description)
+            TextInputSection("태그", { TextInput("태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)") }, value = tags)
             ButtonSection()
             Footer()
         }
