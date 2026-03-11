@@ -39,6 +39,8 @@ fun Modal() {
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
     var tags by remember { mutableStateOf("") }
+    var state by remember { mutableStateOf(0) }
+    var profile by remember { mutableStateOf(0) }
 
     val isTitleEmpty by remember {
         derivedStateOf {
@@ -87,7 +89,12 @@ fun Modal() {
                 isDescriptionLong = isDescriptionLong,
                 isNotValidTag = isNotValidTag
             )
-            ButtonSection()
+            ButtonSection(
+                state = state,
+                profile = profile,
+                onStateClick = { state = it },
+                onProfileClick = { profile = it }
+                )
             Footer(
                 isButtonEnabled = !isNotValidTag && !isDescriptionLong && !isTitleEmpty
             )

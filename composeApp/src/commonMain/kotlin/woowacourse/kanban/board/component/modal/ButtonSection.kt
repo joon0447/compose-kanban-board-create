@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -24,13 +25,16 @@ import javax.swing.ProgressMonitor
 @Preview(showBackground = true)
 private fun ButtonSectionPreview() {
     val list = listOf("To Do", "In Progress", "Done")
-    ButtonSection()
+//    ButtonSection()
 }
 
 @Composable
-fun ButtonSection() {
-    var state by remember { mutableStateOf(0) }
-    var profile by remember { mutableStateOf(0) }
+fun ButtonSection(
+    state: Int,
+    profile: Int,
+    onStateClick: (Int) -> Unit,
+    onProfileClick: (Int) -> Unit
+    ) {
 
     Column(
         modifier = Modifier
@@ -49,9 +53,9 @@ fun ButtonSection() {
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            StateButton(text = "To do", state, onClick = { state = 0 }, id = 0)
-            StateButton(text = "In Progress", state, onClick = { state = 1 }, id = 1)
-            StateButton(text = "Done", state, onClick = { state = 2 }, id = 2)
+            StateButton(text = "To do", state, onClick = { onStateClick(0) }, id = 0)
+            StateButton(text = "In Progress", state, onClick = { onStateClick(1) }, id = 1)
+            StateButton(text = "Done", state, onClick = { onStateClick(2) }, id = 2)
         }
         Text(
             text = "담당자",
@@ -64,8 +68,8 @@ fun ButtonSection() {
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            ProfileButton("다이노", profile, onClick = { profile = 0 }, id = 0)
-            ProfileButton("페임스", profile, onClick = { profile = 1 }, id = 1)
+            ProfileButton("다이노", profile, onClick = { onProfileClick(0) }, id = 0)
+            ProfileButton("페임스", profile, onClick = { onProfileClick(1) }, id = 1)
         }
 
     }
