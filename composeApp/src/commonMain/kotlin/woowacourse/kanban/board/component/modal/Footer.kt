@@ -26,11 +26,13 @@ import androidx.compose.ui.unit.sp
 @Preview(showBackground = true)
 @Composable
 private fun FooterPreview() {
-    Footer()
+    Footer(true)
 }
 
 @Composable
-fun Footer() {
+fun Footer(
+    isButtonEnabled: Boolean
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -60,6 +62,7 @@ fun Footer() {
             }
             Spacer(modifier = Modifier.width(12.dp))
             Button(
+                enabled = isButtonEnabled,
                 onClick = {},
                 modifier = Modifier
                     .clip(RoundedCornerShape(10.dp)),

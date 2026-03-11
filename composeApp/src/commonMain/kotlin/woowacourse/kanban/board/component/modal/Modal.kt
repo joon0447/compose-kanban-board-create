@@ -15,6 +15,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -38,6 +39,26 @@ fun Modal() {
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
     var tags by remember { mutableStateOf("") }
+
+    val isTitleEmpty by remember {
+        derivedStateOf {
+            title.isEmpty()
+        }
+    }
+
+    val isDescriptionLong by remember {
+        derivedStateOf {
+            description.length > 100
+        }
+    }
+
+    val isNotValidTag by remember {
+        derivedStateOf {
+            val extractedTags = tags.split(",")
+            extractedTags.size > 5 || extractedTags.any { it.isEmpty() || it.length > 5 }
+        }
+    }
+
     Card(
         modifier = Modifier
             .width(800.dp)
@@ -55,9 +76,21 @@ fun Modal() {
         ) {
             Header()
             HorizontalDivider()
-            TextInputSection()
+            TextInputSection(
+                title = title,
+                description = description,
+                tags = tags,
+                onTitleChange = { title = it },
+                onDescriptionChange = { description = it },
+                onTagsChange = { tags = it },
+                isTitleEmpty = isTitleEmpty,
+                isDescriptionLong = isDescriptionLong,
+                isNotValidTag = isNotValidTag
+            )
             ButtonSection()
-            Footer()
+            Footer(
+                isButtonEnabled = !isNotValidTag && !isDescriptionLong && !isTitleEmpty
+            )
         }
     }
 }

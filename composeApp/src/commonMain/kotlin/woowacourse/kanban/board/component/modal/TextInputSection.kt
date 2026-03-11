@@ -28,41 +28,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-@Composable
-@Preview(showBackground = true)
-private fun TextInputSectionPreview() {
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        TextInputSection()
-    }
-
-}
 
 @Composable
 fun TextInputSection(
     modifier: Modifier = Modifier,
+    title: String,
+    description: String,
+    tags: String,
+    onTitleChange: (String) -> Unit,
+    onDescriptionChange: (String) -> Unit,
+    onTagsChange: (String) -> Unit,
+    isTitleEmpty: Boolean,
+    isDescriptionLong: Boolean,
+    isNotValidTag: Boolean
 ) {
-    var title by remember { mutableStateOf("") }
-    var description by remember { mutableStateOf("") }
-    var tags by remember { mutableStateOf("") }
-
-    val isTitleEmpty by remember {
-        derivedStateOf {
-            title.isEmpty()
-        }
-    }
-
-    val isDescriptionLong by remember {
-        derivedStateOf {
-            description.length > 100
-        }
-    }
-
-    val isNotValidTag by remember {
-        derivedStateOf {
-            val extractedTags = tags.split(",")
-            extractedTags.size > 5 || extractedTags.any { it.isEmpty() || it.length > 5 }
-        }
-    }
 
     Column(
         modifier = modifier
@@ -74,7 +53,7 @@ fun TextInputSection(
             label = "제목 *",
             value = title,
             placeholder = "태스크 제목을 입력하세요",
-            onTextChange = { title = it },
+            onTextChange = onTitleChange,
             isError = isTitleEmpty,
             errorText = "제목이 비어있으면 안됩니다."
         )
@@ -84,7 +63,7 @@ fun TextInputSection(
             singleLine = false,
             modifier = Modifier.height(200.dp),
             placeholder = "태스크에 대한 자세한 설명을 입력하세요",
-            onTextChange = { description = it },
+            onTextChange = onDescriptionChange,
             isError = isDescriptionLong,
             errorText = "설명은 100자 이내로 입력해주세요."
         )
@@ -92,7 +71,7 @@ fun TextInputSection(
             label = "태그 *",
             value = tags,
             placeholder = "태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)",
-            onTextChange = { tags = it },
+            onTextChange = onTagsChange,
             supportingText = "5자 이내에 태그를 최대 5개까지 등록할 수 있습니다.",
             isError = isNotValidTag,
             errorText = "태그 형식이 올바르지 않습니다."
