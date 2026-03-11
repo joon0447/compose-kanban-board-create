@@ -35,8 +35,8 @@ fun ProfileButton(
     id: Int,
     onClick: () -> Unit
 ) {
-    var backgroundColor = if (state == id) Color(0xFFEFF6FF) else Color.Transparent
-    var borderColor = if (state == id) Color(0xFF1447E6) else Color(0xFFE5E7EB)
+    val backgroundColor = if (state == id) Color(0xFFEFF6FF) else Color.Transparent
+    val borderColor = if (state == id) Color(0xFF1447E6) else Color(0xFFE5E7EB)
 
     Box(
         modifier = Modifier
