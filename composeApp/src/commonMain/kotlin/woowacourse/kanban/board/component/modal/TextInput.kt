@@ -39,8 +39,8 @@ fun TextInput(
         },
         supportingText = { Text(text = "dsdsa") },
         colors = OutlinedTextFieldDefaults.colors(
-            unfocusedBorderColor = Color.Gray,
-            focusedBorderColor = Color.Gray,
+            unfocusedBorderColor = Color(0xFFE5E7EB),
+            focusedBorderColor = Color(0xFFE5E7EB),
             unfocusedContainerColor = Color.Transparent,
             focusedContainerColor = Color.Transparent,
         ),
