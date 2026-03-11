@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CustomButton(
-    value: String,
+fun StateButton(
+   text: String,
 ) {
     Box(
         modifier = Modifier
@@ -26,7 +26,7 @@ fun CustomButton(
             .padding(horizontal = 50.dp, vertical = 14.dp),
     ) {
         Text(
-            text = value,
+            text = text,
             textAlign = TextAlign.Center,
             modifier = Modifier.fillMaxWidth(),
             fontSize = 16.sp,
