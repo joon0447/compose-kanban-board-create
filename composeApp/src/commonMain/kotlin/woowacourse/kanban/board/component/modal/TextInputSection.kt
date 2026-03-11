@@ -30,33 +30,46 @@ import androidx.compose.ui.unit.sp
 @Composable
 @Preview(showBackground = true)
 private fun TextInputSectionPreview() {
-    var value by remember { mutableStateOf("") }
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        TextInputSection("제목", { TextInput("테스크 제목을 입력하세요.")}, value = value)
-        TextInputSection("설명", { TextInput("테스크에 대한 자세한 설명을 입력하세요")}, value = value)
+        TextInputSection()
     }
 
 }
 
 @Composable
 fun TextInputSection(
-    label: String,
-    content: @Composable (String) -> Unit,
     modifier: Modifier = Modifier,
-    value: String
 ) {
+    var title by remember { mutableStateOf("") }
+    var description by remember { mutableStateOf("") }
+    var tags by remember { mutableStateOf("") }
+
     Column(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 24.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        Text(
-            text = label,
-            fontSize = 14.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = Color(0xFF364153),
+        TextInput(
+            label = "제목 *",
+            value = title,
+            placeholder = "태스크 제목을 입력하세요",
+            onTextChange = { title = it },
         )
-        content(value)
+        TextInput(
+            label = "설명",
+            value = description,
+            singleLine = false,
+            modifier = Modifier.height(200.dp),
+            placeholder = "태스크에 대한 자세한 설명을 입력하세요",
+            onTextChange = { description = it },
+        )
+        TextInput(
+            label = "태그 *",
+            value = tags,
+            placeholder = "태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)",
+            onTextChange = { tags = it },
+            supportingText = "5자 이내에 태그를 최대 5개까지 등록할 수 있습니다."
+        )
     }
 }

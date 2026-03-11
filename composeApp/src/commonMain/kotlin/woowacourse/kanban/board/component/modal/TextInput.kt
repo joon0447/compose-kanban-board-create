@@ -21,15 +21,25 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun TextInput(
+    label: String,
+    value: String,
     placeholder: String,
+    singleLine: Boolean = true,
+    onTextChange: (String) -> Unit,
     modifier: Modifier = Modifier,
     supportingText: String?= null
 ) {
-    var value by remember { mutableStateOf("") }
+    Text(
+        text = label,
+        fontSize = 14.sp,
+        color = Color(0xFF364153),
+        fontWeight = FontWeight.Bold
+    )
     OutlinedTextField(
         value = value,
         modifier = modifier
             .fillMaxWidth(),
+        singleLine = singleLine,
         placeholder = {
             Text(
                 text = placeholder,
@@ -49,6 +59,6 @@ fun TextInput(
             unfocusedContainerColor = Color.Transparent,
             focusedContainerColor = Color.Transparent,
         ),
-        onValueChange = { value = it },
+        onValueChange = onTextChange,
     )
 }
