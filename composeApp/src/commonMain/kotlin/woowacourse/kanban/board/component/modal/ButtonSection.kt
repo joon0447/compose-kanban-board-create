@@ -25,8 +25,14 @@ import javax.swing.ProgressMonitor
 @Composable
 @Preview(showBackground = true)
 private fun ButtonSectionPreview() {
-    val list = listOf("To Do", "In Progress", "Done")
-//    ButtonSection()
+    var state by remember { mutableStateOf(0) }
+    var profile by remember { mutableStateOf(0) }
+    ButtonSection(
+        state = state,
+        profile = profile,
+        onStateClick = { state = it},
+        onProfileClick = { profile = it }
+    )
 }
 
 @Composable
