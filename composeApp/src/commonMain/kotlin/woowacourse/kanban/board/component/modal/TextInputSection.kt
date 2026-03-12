@@ -28,8 +28,56 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.ComponentText
+import woowacourse.kanban.board.TextValidator
 
 
+@Preview(showBackground = true)
+@Composable
+private fun TextInputSectionPreview() {
+    var title by remember { mutableStateOf("") }
+    var description by remember { mutableStateOf("") }
+    var tags by remember { mutableStateOf("") }
+
+    val isTitleEmpty by remember {
+        derivedStateOf {
+            TextValidator.checkTitleIsEmpty(title)
+        }
+    }
+
+    val isNotValidTag by remember {
+        derivedStateOf {
+            TextValidator.checkNotValidTags(tags)
+        }
+    }
+
+    Column {
+        TextInput(
+            label = ComponentText.TITLE_LABEL,
+            value = title,
+            placeholder = ComponentText.TITLE_PLACEHOLDER,
+            onTextChange = { title = it },
+            isError = isTitleEmpty,
+            errorText = ComponentText.TITLE_ERROR
+        )
+        TextInput(
+            label = ComponentText.DESCRIPTION_LABEL,
+            value = description,
+            singleLine = false,
+            modifier = Modifier.height(200.dp),
+            placeholder = ComponentText.DESCRIPTION_PLACEHOLDER,
+            onTextChange = { description = it },
+        )
+        TextInput(
+            label = ComponentText.TAG_LABEL,
+            value = tags,
+            placeholder = ComponentText.TAG_PLACEHOLDER,
+            onTextChange = { tags = it  },
+            supportingText = ComponentText.TAG_SUPPORTING,
+            isError = isNotValidTag,
+            errorText = ComponentText.TAG_ERROR,
+        )
+    }
+}
 @Composable
 fun TextInputSection(
     modifier: Modifier = Modifier,
