@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.Blue50
 import woowacourse.kanban.board.ComponentText
+import woowacourse.kanban.board.Gray20
 
 @Preview(showBackground = true)
 @Composable
@@ -47,37 +48,17 @@ fun Footer(
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.End,
         ) {
-            Button(
-                onClick = {},
-                modifier = Modifier
-                    .clip(RoundedCornerShape(10.dp)),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Transparent,
-                    contentColor = Color(0xFF364153),
-                ),
-            ) {
-                Text(
-                    text = ComponentText.CANCEL_BUTTON,
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Normal,
-                )
-            }
+            FooterButton(
+                containerColor = Color.Transparent,
+                contentColor = Gray20,
+                text = ComponentText.CANCEL_BUTTON
+            )
             Spacer(modifier = Modifier.width(12.dp))
-            Button(
+            FooterButton(
                 enabled = isButtonEnabled,
-                onClick = {},
-                modifier = Modifier
-                    .clip(RoundedCornerShape(10.dp)),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Blue50,
-                ),
-            ) {
-                Text(
-                    text = ComponentText.CREATE_BUTTON,
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Normal,
-                )
-            }
+                containerColor = Blue50,
+                text = ComponentText.CREATE_BUTTON
+            )
         }
     }
 }
