@@ -1,18 +1,12 @@
 package woowacourse.kanban.board.component.modal
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -32,7 +26,7 @@ import woowacourse.kanban.board.ComponentText
 import woowacourse.kanban.board.Gray20
 import woowacourse.kanban.board.Gray70
 import woowacourse.kanban.board.Red50
-import woowacourse.kanban.board.TextValidator
+import woowacourse.kanban.board.Validator
 
 @Preview(showBackground = true)
 @Composable
@@ -41,7 +35,7 @@ private fun TextInputPreview() {
 
     val isTitleEmpty by remember {
         derivedStateOf {
-            TextValidator.checkTitleIsEmpty(title)
+            Validator.checkTitleIsEmpty(title)
         }
     }
 
