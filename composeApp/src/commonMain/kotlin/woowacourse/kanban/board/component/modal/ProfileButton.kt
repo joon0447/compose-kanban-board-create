@@ -26,6 +26,7 @@ import kanbanboard.composeapp.generated.resources.profile
 import org.jetbrains.compose.resources.painterResource
 import woowacourse.kanban.board.Blue50
 import woowacourse.kanban.board.Blue80
+import woowacourse.kanban.board.Gray20
 import woowacourse.kanban.board.Gray70
 
 @Composable
@@ -55,7 +56,7 @@ fun ProfileButton(text: String, state: Int, id: Int, onClick: () -> Unit, modifi
                 text = text,
                 modifier = Modifier.fillMaxWidth(),
                 fontSize = 16.sp,
-                color = Color(0xFF364153),
+                color = Gray20,
                 fontWeight = FontWeight.Normal,
             )
         }

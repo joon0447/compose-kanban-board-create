@@ -12,12 +12,12 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.ComponentText
+import woowacourse.kanban.board.Gray20
 
 @Composable
 @Preview(showBackground = true)
@@ -45,7 +45,7 @@ fun ButtonSection(modifier: Modifier = Modifier, state: Int, profile: Int, onSta
             text = ComponentText.STATE_BUTTON_LABEL,
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
-            color = Color(0xFF364153),
+            color = Gray20,
         )
         FlowRow(
             modifier = modifier.fillMaxWidth(),
@@ -60,7 +60,7 @@ fun ButtonSection(modifier: Modifier = Modifier, state: Int, profile: Int, onSta
             text = ComponentText.PROFILE_BUTTON_LABEL,
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
-            color = Color(0xFF364153),
+            color = Gray20,
         )
         FlowRow(
             modifier = modifier.fillMaxWidth(),

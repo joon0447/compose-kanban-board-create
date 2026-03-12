@@ -24,6 +24,7 @@ import kanbanboard.composeapp.generated.resources.icon
 import org.jetbrains.compose.resources.painterResource
 import woowacourse.kanban.board.ComponentText
 import woowacourse.kanban.board.Gray20
+import woowacourse.kanban.board.Gray40
 import woowacourse.kanban.board.Gray70
 import woowacourse.kanban.board.Red50
 import woowacourse.kanban.board.Validator
@@ -70,7 +71,7 @@ fun TextInput(
         Text(
             text = label,
             fontSize = 14.sp,
-            color = Color(0xFF364153),
+            color = Gray20,
             fontWeight = FontWeight.Bold,
         )
         OutlinedTextField(
@@ -81,7 +82,7 @@ fun TextInput(
             placeholder = {
                 Text(
                     text = placeholder,
-                    color = Color(0xFFAAAAAA),
+                    color = Gray40,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Normal,
                 )
