@@ -10,5 +10,3 @@ internal val Gray80 = Color(0xFFF3F4F6)
 internal val Blue50 = Color(0xFF1447E6)
 internal val Blue80 = Color(0xFFEEF2FF)
 internal val Red50 = Color(0xFFB3261E)
-
-

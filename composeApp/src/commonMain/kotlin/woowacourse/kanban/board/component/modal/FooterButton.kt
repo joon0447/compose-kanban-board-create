@@ -11,7 +11,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import woowacourse.kanban.board.ComponentText
 
 @Composable
 fun FooterButton(
@@ -20,7 +19,6 @@ fun FooterButton(
     enabled: Boolean = true,
     onClick: () -> Unit = {},
     contentColor: Color = Color.Unspecified,
-
 ) {
     Button(
         enabled = enabled,

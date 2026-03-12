@@ -7,7 +7,7 @@ object ComponentText {
     const val TITLE_ERROR = "제목이 비어있으면 안됩니다."
     const val DESCRIPTION_LABEL = "설명"
     const val DESCRIPTION_PLACEHOLDER = "태스크에 대한 자세한 설명을 입력하세요"
-    const val TAG_LABEL ="태그"
+    const val TAG_LABEL = "태그"
     const val TAG_PLACEHOLDER = "태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)"
     const val TAG_SUPPORTING = "5자 이내에 태그를 최대 5개까지 등록할 수 있습니다."
     const val TAG_ERROR = "태그 형식이 올바르지 않습니다."

@@ -1,6 +1,5 @@
 package woowacourse.kanban.board.component.modal
 
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,19 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.Blue50
 import woowacourse.kanban.board.ComponentText
 import woowacourse.kanban.board.Gray20
@@ -33,13 +25,11 @@ private fun FooterPreview() {
 }
 
 @Composable
-fun Footer(
-    isButtonEnabled: Boolean
-) {
+fun Footer(isButtonEnabled: Boolean) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 24.dp)
+            .padding(horizontal = 24.dp),
     ) {
         HorizontalDivider()
         Spacer(modifier = Modifier.height(8.dp))
@@ -51,13 +41,13 @@ fun Footer(
             FooterButton(
                 containerColor = Color.Transparent,
                 contentColor = Gray20,
-                text = ComponentText.CANCEL_BUTTON
+                text = ComponentText.CANCEL_BUTTON,
             )
             Spacer(modifier = Modifier.width(12.dp))
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
-                text = ComponentText.CREATE_BUTTON
+                text = ComponentText.CREATE_BUTTON,
             )
         }
     }

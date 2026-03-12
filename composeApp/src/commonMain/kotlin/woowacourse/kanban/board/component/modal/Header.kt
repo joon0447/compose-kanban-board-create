@@ -27,24 +27,24 @@ fun HeaderPreview() {
 
 @Composable
 fun Header() {
-    Row (
+    Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .padding(horizontal = 24.dp)
-            .fillMaxWidth()
+            .fillMaxWidth(),
     ) {
         Text(
             text = ComponentText.HEADER_LABEL,
             fontSize = 20.sp,
             color = Color.Black,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
         )
         Icon(
             modifier = Modifier
-                .clickable {} ,
+                .clickable {},
             imageVector = Icons.Default.Close,
-            contentDescription = "닫기"
+            contentDescription = "닫기",
         )
     }
 }

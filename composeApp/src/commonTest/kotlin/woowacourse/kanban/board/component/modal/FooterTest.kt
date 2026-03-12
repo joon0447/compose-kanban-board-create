@@ -5,10 +5,10 @@ import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
+import kotlin.test.Test
 import woowacourse.kanban.board.Blue50
 import woowacourse.kanban.board.ComponentText
 import woowacourse.kanban.board.Validator
-import kotlin.test.Test
 
 @OptIn(ExperimentalTestApi::class)
 class FooterTest {
@@ -25,12 +25,11 @@ class FooterTest {
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
-                text = ComponentText.CREATE_BUTTON
+                text = ComponentText.CREATE_BUTTON,
             )
         }
         onNodeWithText(ComponentText.CREATE_BUTTON)
             .assertIsEnabled()
-
     }
 
     @Test
@@ -45,7 +44,7 @@ class FooterTest {
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
-                text = ComponentText.CREATE_BUTTON
+                text = ComponentText.CREATE_BUTTON,
             )
         }
         onNodeWithText(ComponentText.CREATE_BUTTON)
@@ -64,7 +63,7 @@ class FooterTest {
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
-                text = ComponentText.CREATE_BUTTON
+                text = ComponentText.CREATE_BUTTON,
             )
         }
         onNodeWithText(ComponentText.CREATE_BUTTON)
@@ -83,7 +82,7 @@ class FooterTest {
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
-                text = ComponentText.CREATE_BUTTON
+                text = ComponentText.CREATE_BUTTON,
             )
         }
         onNodeWithText(ComponentText.CREATE_BUTTON)
@@ -102,7 +101,7 @@ class FooterTest {
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
-                text = ComponentText.CREATE_BUTTON
+                text = ComponentText.CREATE_BUTTON,
             )
         }
         onNodeWithText(ComponentText.CREATE_BUTTON)

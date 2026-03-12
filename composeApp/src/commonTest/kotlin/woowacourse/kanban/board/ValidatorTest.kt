@@ -45,9 +45,9 @@ class ValidatorTest {
         val title = "제목"
         val isTitleEmpty = Validator.checkTitleIsEmpty(title)
         val tags = ""
-        val isNotValidTag  = Validator.checkNotValidTags(tags)
+        val isNotValidTag = Validator.checkNotValidTags(tags)
 
-        assertTrue { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag ) }
+        assertTrue { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag) }
     }
 
     @Test
@@ -55,9 +55,9 @@ class ValidatorTest {
         val title = ""
         val isTitleEmpty = Validator.checkTitleIsEmpty(title)
         val tags = ""
-        val isNotValidTag  = Validator.checkNotValidTags(tags)
+        val isNotValidTag = Validator.checkNotValidTags(tags)
 
-        assertFalse { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag ) }
+        assertFalse { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag) }
     }
 
     @Test
@@ -65,9 +65,9 @@ class ValidatorTest {
         val title = "제목"
         val isTitleEmpty = Validator.checkTitleIsEmpty(title)
         val tags = "1,2,3,4,5,6"
-        val isNotValidTag  = Validator.checkNotValidTags(tags)
+        val isNotValidTag = Validator.checkNotValidTags(tags)
 
-        assertFalse { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag ) }
+        assertFalse { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag) }
     }
 
     @Test
@@ -75,9 +75,9 @@ class ValidatorTest {
         val title = "제목"
         val isTitleEmpty = Validator.checkTitleIsEmpty(title)
         val tags = "5글자 초과 태그"
-        val isNotValidTag  = Validator.checkNotValidTags(tags)
+        val isNotValidTag = Validator.checkNotValidTags(tags)
 
-        assertFalse { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag ) }
+        assertFalse { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag) }
     }
 
     @Test
@@ -85,7 +85,7 @@ class ValidatorTest {
         val title = "제목"
         val isTitleEmpty = Validator.checkTitleIsEmpty(title)
         val tags = "태그1,태그2,태그3,태그4,태그5"
-        val isNotValidTag  = Validator.checkNotValidTags(tags)
+        val isNotValidTag = Validator.checkNotValidTags(tags)
 
         assertTrue { Validator.checkButtonEnable(isTitleEmpty, isNotValidTag) }
     }

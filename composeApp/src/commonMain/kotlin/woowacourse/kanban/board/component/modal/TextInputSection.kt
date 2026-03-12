@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import woowacourse.kanban.board.ComponentText
 import woowacourse.kanban.board.Validator
 
-
 @Preview(showBackground = true)
 @Composable
 private fun TextInputSectionPreview() {
@@ -44,7 +43,7 @@ private fun TextInputSectionPreview() {
             placeholder = ComponentText.TITLE_PLACEHOLDER,
             onTextChange = { title = it },
             isError = isTitleEmpty,
-            errorText = ComponentText.TITLE_ERROR
+            errorText = ComponentText.TITLE_ERROR,
         )
         TextInput(
             label = ComponentText.DESCRIPTION_LABEL,
@@ -58,7 +57,7 @@ private fun TextInputSectionPreview() {
             label = ComponentText.TAG_LABEL,
             value = tags,
             placeholder = ComponentText.TAG_PLACEHOLDER,
-            onTextChange = { tags = it  },
+            onTextChange = { tags = it },
             supportingText = ComponentText.TAG_SUPPORTING,
             isError = isNotValidTag,
             errorText = ComponentText.TAG_ERROR,
@@ -75,7 +74,7 @@ fun TextInputSection(
     onDescriptionChange: (String) -> Unit,
     onTagsChange: (String) -> Unit,
     isTitleEmpty: Boolean,
-    isNotValidTag: Boolean
+    isNotValidTag: Boolean,
 ) {
 
     Column(
@@ -90,7 +89,7 @@ fun TextInputSection(
             placeholder = ComponentText.TITLE_PLACEHOLDER,
             onTextChange = onTitleChange,
             isError = isTitleEmpty,
-            errorText = ComponentText.TITLE_ERROR
+            errorText = ComponentText.TITLE_ERROR,
         )
         TextInput(
             label = ComponentText.DESCRIPTION_LABEL,
@@ -107,7 +106,7 @@ fun TextInputSection(
             onTextChange = onTagsChange,
             supportingText = ComponentText.TAG_SUPPORTING,
             isError = isNotValidTag,
-            errorText = ComponentText.TAG_ERROR
+            errorText = ComponentText.TAG_ERROR,
         )
     }
 }

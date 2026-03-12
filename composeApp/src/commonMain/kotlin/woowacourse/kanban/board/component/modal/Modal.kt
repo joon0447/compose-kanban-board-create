@@ -72,16 +72,16 @@ fun Modal() {
                 onDescriptionChange = { description = it },
                 onTagsChange = { tags = it },
                 isTitleEmpty = isTitleEmpty,
-                isNotValidTag = isNotValidTag
+                isNotValidTag = isNotValidTag,
             )
             ButtonSection(
                 state = state,
                 profile = profile,
                 onStateClick = { state = it },
-                onProfileClick = { profile = it }
-                )
+                onProfileClick = { profile = it },
+            )
             Footer(
-                isButtonEnabled = Validator.checkButtonEnable(isTitleEmpty, isNotValidTag)
+                isButtonEnabled = Validator.checkButtonEnable(isTitleEmpty, isNotValidTag),
             )
         }
     }

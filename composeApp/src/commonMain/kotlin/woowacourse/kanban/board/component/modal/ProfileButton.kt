@@ -1,6 +1,5 @@
 package woowacourse.kanban.board.component.modal
 
-import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,14 +13,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kanbanboard.composeapp.generated.resources.Res
@@ -29,16 +26,10 @@ import kanbanboard.composeapp.generated.resources.profile
 import org.jetbrains.compose.resources.painterResource
 import woowacourse.kanban.board.Blue50
 import woowacourse.kanban.board.Blue80
-import woowacourse.kanban.board.Gray10
 import woowacourse.kanban.board.Gray70
 
 @Composable
-fun ProfileButton(
-    text: String,
-    state: Int,
-    id: Int,
-    onClick: () -> Unit
-) {
+fun ProfileButton(text: String, state: Int, id: Int, onClick: () -> Unit) {
     val backgroundColor = if (state == id) Blue80 else Color.Transparent
     val borderColor = if (state == id) Blue50 else Gray70
 
@@ -51,9 +42,9 @@ fun ProfileButton(
             .clickable { onClick() }
             .padding(horizontal = 16.dp, vertical = 20.dp),
     ) {
-        Row (
-            horizontalArrangement = Arrangement.Start
-        ){
+        Row(
+            horizontalArrangement = Arrangement.Start,
+        ) {
             Image(
                 painter = painterResource(Res.drawable.profile),
                 contentDescription = "프로필 이미지",
@@ -68,6 +59,5 @@ fun ProfileButton(
                 fontWeight = FontWeight.Normal,
             )
         }
-
     }
 }

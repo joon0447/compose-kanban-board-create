@@ -46,7 +46,7 @@ private fun TextInputPreview() {
             placeholder = ComponentText.TITLE_PLACEHOLDER,
             onTextChange = { title = it },
             isError = isTitleEmpty,
-            errorText = ComponentText.TITLE_ERROR
+            errorText = ComponentText.TITLE_ERROR,
         )
     }
 }
@@ -59,9 +59,9 @@ fun TextInput(
     modifier: Modifier = Modifier,
     singleLine: Boolean = true,
     onTextChange: (String) -> Unit,
-    supportingText: String?= null,
-    isError: Boolean= false,
-    errorText: String= ""
+    supportingText: String? = null,
+    isError: Boolean = false,
+    errorText: String = "",
 ) {
     val borderColor = if (isError) Red50 else Gray70
     val textColor = if (isError) Red50 else Gray20
@@ -71,7 +71,7 @@ fun TextInput(
             text = label,
             fontSize = 14.sp,
             color = Color(0xFF364153),
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
         )
         OutlinedTextField(
             value = value,
@@ -91,18 +91,17 @@ fun TextInput(
                     Image(
                         painter = painterResource(Res.drawable.icon),
                         contentDescription = "에러 아이콘",
-                        modifier = Modifier.size(20.dp)
+                        modifier = Modifier.size(20.dp),
                     )
                 }
             },
             supportingText = {
-                if (isError){
+                if (isError) {
                     Text(
                         text = errorText,
-                        color = textColor
+                        color = textColor,
                     )
-                }
-                else if(supportingText != null) {
+                } else if (supportingText != null) {
                     Text(text = supportingText)
                 }
             },
@@ -112,7 +111,7 @@ fun TextInput(
                 unfocusedContainerColor = Color.Transparent,
                 focusedContainerColor = Color.Transparent,
                 unfocusedTextColor = textColor,
-                focusedTextColor = textColor
+                focusedTextColor = textColor,
             ),
             onValueChange = onTextChange,
         )

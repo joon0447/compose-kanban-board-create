@@ -19,17 +19,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.Blue50
 import woowacourse.kanban.board.Blue80
-import woowacourse.kanban.board.Gray10
 import woowacourse.kanban.board.Gray20
 import woowacourse.kanban.board.Gray70
 
 @Composable
-fun StateButton(
-   text: String,
-   state: Int,
-   onClick: () -> Unit,
-   id: Int
-) {
+fun StateButton(text: String, state: Int, onClick: () -> Unit, id: Int) {
     val backgroundColor = if (state == id) Blue80 else Color.Transparent
     val borderColor = if (state == id) Blue50 else Gray70
     val textColor = if (state == id) Blue50 else Gray20
@@ -38,12 +32,14 @@ fun StateButton(
         modifier = Modifier
             .width(200.dp)
             .clip(RoundedCornerShape(10.dp))
-            .border(1.dp,
+            .border(
+                1.dp,
                 color = borderColor,
-                shape = RoundedCornerShape(10.dp))
+                shape = RoundedCornerShape(10.dp),
+            )
             .background(color = backgroundColor)
-            .clickable{ onClick() }
-            .padding(horizontal = 50.dp, vertical = 14.dp)
+            .clickable { onClick() }
+            .padding(horizontal = 50.dp, vertical = 14.dp),
 
     ) {
         Text(
