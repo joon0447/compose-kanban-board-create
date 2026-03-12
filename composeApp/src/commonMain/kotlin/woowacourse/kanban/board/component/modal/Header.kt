@@ -26,11 +26,11 @@ fun HeaderPreview() {
 }
 
 @Composable
-fun Header() {
+fun Header(modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier
+        modifier = modifier
             .padding(horizontal = 24.dp)
             .fillMaxWidth(),
     ) {
@@ -41,7 +41,7 @@ fun Header() {
             fontWeight = FontWeight.Bold,
         )
         Icon(
-            modifier = Modifier
+            modifier = modifier
                 .clickable {},
             imageVector = Icons.Default.Close,
             contentDescription = "닫기",

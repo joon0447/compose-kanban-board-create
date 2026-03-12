@@ -9,7 +9,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -34,10 +33,10 @@ private fun ButtonSectionPreview() {
 }
 
 @Composable
-fun ButtonSection(state: Int, profile: Int, onStateClick: (Int) -> Unit, onProfileClick: (Int) -> Unit) {
+fun ButtonSection(modifier: Modifier = Modifier, state: Int, profile: Int, onStateClick: (Int) -> Unit, onProfileClick: (Int) -> Unit) {
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 24.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
@@ -49,7 +48,7 @@ fun ButtonSection(state: Int, profile: Int, onStateClick: (Int) -> Unit, onProfi
             color = Color(0xFF364153),
         )
         FlowRow(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
@@ -64,7 +63,7 @@ fun ButtonSection(state: Int, profile: Int, onStateClick: (Int) -> Unit, onProfi
             color = Color(0xFF364153),
         )
         FlowRow(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {

@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.sp
 fun FooterButton(
     containerColor: Color,
     text: String,
+    modifier: Modifier = Modifier,
     enabled: Boolean = true,
     onClick: () -> Unit = {},
     contentColor: Color = Color.Unspecified,
@@ -23,7 +24,7 @@ fun FooterButton(
     Button(
         enabled = enabled,
         onClick = onClick,
-        modifier = Modifier
+        modifier = modifier
             .clip(RoundedCornerShape(10.dp)),
         colors = ButtonDefaults.buttonColors(
             containerColor = containerColor,

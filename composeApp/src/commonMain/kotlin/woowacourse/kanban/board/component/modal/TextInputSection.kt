@@ -66,7 +66,6 @@ private fun TextInputSectionPreview() {
 }
 @Composable
 fun TextInputSection(
-    modifier: Modifier = Modifier,
     title: String,
     description: String,
     tags: String,
@@ -75,6 +74,7 @@ fun TextInputSection(
     onTagsChange: (String) -> Unit,
     isTitleEmpty: Boolean,
     isNotValidTag: Boolean,
+    modifier: Modifier = Modifier,
 ) {
 
     Column(

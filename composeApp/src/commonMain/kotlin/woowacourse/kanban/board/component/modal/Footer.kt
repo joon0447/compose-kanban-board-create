@@ -25,16 +25,16 @@ private fun FooterPreview() {
 }
 
 @Composable
-fun Footer(isButtonEnabled: Boolean) {
+fun Footer(isButtonEnabled: Boolean, modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 24.dp),
     ) {
         HorizontalDivider()
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = modifier.height(8.dp))
         Row(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.End,
         ) {
@@ -43,7 +43,7 @@ fun Footer(isButtonEnabled: Boolean) {
                 contentColor = Gray20,
                 text = ComponentText.CANCEL_BUTTON,
             )
-            Spacer(modifier = Modifier.width(12.dp))
+            Spacer(modifier = modifier.width(12.dp))
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
