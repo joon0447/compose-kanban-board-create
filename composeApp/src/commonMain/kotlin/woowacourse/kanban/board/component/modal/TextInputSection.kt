@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import woowacourse.kanban.board.ComponentText
 
 
 @Composable
@@ -50,31 +51,31 @@ fun TextInputSection(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         TextInput(
-            label = "제목 *",
+            label = ComponentText.TITLE_LABEL,
             value = title,
-            placeholder = "태스크 제목을 입력하세요",
+            placeholder = ComponentText.TITLE_PLACEHOLDER,
             onTextChange = onTitleChange,
             isError = isTitleEmpty,
-            errorText = "제목이 비어있으면 안됩니다."
+            errorText = ComponentText.TITLE_ERROR
         )
         TextInput(
-            label = "설명",
+            label = ComponentText.DESCRIPTION_LABEL,
             value = description,
             singleLine = false,
             modifier = Modifier.height(200.dp),
-            placeholder = "태스크에 대한 자세한 설명을 입력하세요",
+            placeholder = ComponentText.DESCRIPTION_PLACEHOLDER,
             onTextChange = onDescriptionChange,
             isError = isDescriptionLong,
-            errorText = "설명은 100자 이내로 입력해주세요."
+            errorText = ComponentText.DESCRIPTION_ERROR
         )
         TextInput(
-            label = "태그 *",
+            label = ComponentText.TAG_LABEL,
             value = tags,
-            placeholder = "태그를 쉼표로 구분하여 입력하세요 (예: 버그, 긴급)",
+            placeholder = ComponentText.TAG_PLACEHOLDER,
             onTextChange = onTagsChange,
-            supportingText = "5자 이내에 태그를 최대 5개까지 등록할 수 있습니다.",
+            supportingText = ComponentText.TAG_SUPPORTING,
             isError = isNotValidTag,
-            errorText = "태그 형식이 올바르지 않습니다."
+            errorText = ComponentText.TAG_ERROR
         )
     }
 }

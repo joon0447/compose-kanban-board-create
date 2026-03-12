@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.Blue50
+import woowacourse.kanban.board.ComponentText
 
 @Preview(showBackground = true)
 @Composable
@@ -56,7 +57,7 @@ fun Footer(
                 ),
             ) {
                 Text(
-                    text = "취소",
+                    text = ComponentText.CANCEL_BUTTON,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Normal,
                 )
@@ -72,7 +73,7 @@ fun Footer(
                 ),
             ) {
                 Text(
-                    text = "생성",
+                    text = ComponentText.CREATE_BUTTON,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Normal,
                 )

@@ -19,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import woowacourse.kanban.board.ComponentText
 import javax.swing.ProgressMonitor
 
 @Composable
@@ -43,7 +44,7 @@ fun ButtonSection(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
-            text = "상태",
+            text = ComponentText.STATE_BUTTON_LABEL,
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
             color = Color(0xFF364153),
@@ -53,12 +54,12 @@ fun ButtonSection(
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            StateButton(text = "To do", state, onClick = { onStateClick(0) }, id = 0)
-            StateButton(text = "In Progress", state, onClick = { onStateClick(1) }, id = 1)
-            StateButton(text = "Done", state, onClick = { onStateClick(2) }, id = 2)
+            StateButton(text = ComponentText.STATE_BUTTON_TODO, state, onClick = { onStateClick(0) }, id = 0)
+            StateButton(text = ComponentText.STATE_BUTTON_PROGRESS, state, onClick = { onStateClick(1) }, id = 1)
+            StateButton(text = ComponentText.STATE_BUTTON_DONE, state, onClick = { onStateClick(2) }, id = 2)
         }
         Text(
-            text = "담당자",
+            text = ComponentText.PROFILE_BUTTON_LABEL,
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
             color = Color(0xFF364153),
