@@ -36,8 +36,8 @@ fun TextInput(
     onTextChange: (String) -> Unit,
     modifier: Modifier = Modifier,
     supportingText: String?= null,
-    isError: Boolean,
-    errorText: String
+    isError: Boolean= false,
+    errorText: String= ""
 ) {
     val borderColor = if (isError) Red50 else Gray70
     val textColor = if (isError) Red50 else Gray20

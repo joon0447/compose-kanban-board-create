@@ -49,12 +49,6 @@ fun Modal() {
         }
     }
 
-    val isDescriptionLong by remember {
-        derivedStateOf {
-            description.length > DefaultValue.DESCRIPTION_MAX_TEXT_LENGTH
-        }
-    }
-
     val isNotValidTag by remember {
         derivedStateOf {
             val extractedTags = tags.split(",")
@@ -87,7 +81,6 @@ fun Modal() {
                 onDescriptionChange = { description = it },
                 onTagsChange = { tags = it },
                 isTitleEmpty = isTitleEmpty,
-                isDescriptionLong = isDescriptionLong,
                 isNotValidTag = isNotValidTag
             )
             ButtonSection(
@@ -97,7 +90,7 @@ fun Modal() {
                 onProfileClick = { profile = it }
                 )
             Footer(
-                isButtonEnabled = !isNotValidTag && !isDescriptionLong && !isTitleEmpty
+                isButtonEnabled = !isNotValidTag &&  !isTitleEmpty
             )
         }
     }

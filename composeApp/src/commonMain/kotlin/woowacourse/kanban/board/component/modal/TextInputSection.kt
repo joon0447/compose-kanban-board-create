@@ -40,7 +40,6 @@ fun TextInputSection(
     onDescriptionChange: (String) -> Unit,
     onTagsChange: (String) -> Unit,
     isTitleEmpty: Boolean,
-    isDescriptionLong: Boolean,
     isNotValidTag: Boolean
 ) {
 
@@ -65,8 +64,6 @@ fun TextInputSection(
             modifier = Modifier.height(200.dp),
             placeholder = ComponentText.DESCRIPTION_PLACEHOLDER,
             onTextChange = onDescriptionChange,
-            isError = isDescriptionLong,
-            errorText = ComponentText.DESCRIPTION_ERROR
         )
         TextInput(
             label = ComponentText.TAG_LABEL,
