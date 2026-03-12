@@ -1,4 +1,4 @@
-package woowacourse.kanban.board.component
+package woowacourse.kanban.board.component.taskcard
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
@@ -6,7 +6,6 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
-import woowacourse.kanban.board.component.taskcard.Tags
 import kotlin.test.Test
 
 @OptIn(ExperimentalTestApi::class)

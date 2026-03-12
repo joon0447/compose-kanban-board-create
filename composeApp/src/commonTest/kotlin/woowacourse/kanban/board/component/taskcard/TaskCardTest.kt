@@ -1,9 +1,8 @@
-package woowacourse.kanban.board.component
+package woowacourse.kanban.board.component.taskcard
 
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
-import woowacourse.kanban.board.component.taskcard.TaskCard
 import kotlin.test.Test
 import woowacourse.kanban.board.model.TaskCardData
 
