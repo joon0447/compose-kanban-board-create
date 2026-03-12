@@ -28,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.DefaultValue
+import woowacourse.kanban.board.TextValidator
 
 @Preview(showBackground = true)
 @Composable
@@ -45,14 +46,13 @@ fun Modal() {
 
     val isTitleEmpty by remember {
         derivedStateOf {
-            title.isEmpty()
+            TextValidator.checkTitleIsEmpty(title)
         }
     }
 
     val isNotValidTag by remember {
         derivedStateOf {
-            val extractedTags = tags.split(",")
-            extractedTags.size > DefaultValue.MAX_TAGS || extractedTags.any { it.isEmpty() || it.length > DefaultValue.TAG_MAX_TEXT_LENGTH }
+            TextValidator.checkNotValidTags(tags)
         }
     }
 

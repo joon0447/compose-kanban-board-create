@@ -32,9 +32,9 @@ fun TextInput(
     label: String,
     value: String,
     placeholder: String,
+    modifier: Modifier = Modifier,
     singleLine: Boolean = true,
     onTextChange: (String) -> Unit,
-    modifier: Modifier = Modifier,
     supportingText: String?= null,
     isError: Boolean= false,
     errorText: String= ""
