@@ -1,5 +1,6 @@
 package woowacourse.kanban.board.component.modal
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -40,6 +41,8 @@ fun Header() {
             fontWeight = FontWeight.Bold
         )
         Icon(
+            modifier = Modifier
+                .clickable {} ,
             imageVector = Icons.Default.Close,
             contentDescription = "닫기"
         )
