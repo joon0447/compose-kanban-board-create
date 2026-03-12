@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import woowacourse.kanban.board.Blue50
 
 @Preview(showBackground = true)
 @Composable
@@ -67,7 +68,7 @@ fun Footer(
                 modifier = Modifier
                     .clip(RoundedCornerShape(10.dp)),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF4F39F6),
+                    containerColor = Blue50,
                 ),
             ) {
                 Text(

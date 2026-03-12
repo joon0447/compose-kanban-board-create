@@ -17,6 +17,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import woowacourse.kanban.board.Blue50
+import woowacourse.kanban.board.Blue80
+import woowacourse.kanban.board.Gray10
+import woowacourse.kanban.board.Gray20
+import woowacourse.kanban.board.Gray70
 
 @Composable
 fun StateButton(
@@ -25,9 +30,9 @@ fun StateButton(
    onClick: () -> Unit,
    id: Int
 ) {
-    var backgroundColor = if (state == id) Color(0xFFEFF6FF) else Color.Transparent
-    var borderColor = if (state == id) Color(0xFF1447E6) else Color(0xFFE5E7EB)
-    var textColor = if (state == id) Color(0xFF1447E6) else Color(0xFF364153)
+    val backgroundColor = if (state == id) Blue80 else Color.Transparent
+    val borderColor = if (state == id) Blue50 else Gray70
+    val textColor = if (state == id) Blue50 else Gray20
 
     Box(
         modifier = Modifier

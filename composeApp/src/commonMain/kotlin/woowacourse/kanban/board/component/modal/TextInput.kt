@@ -23,6 +23,9 @@ import androidx.compose.ui.unit.sp
 import kanbanboard.composeapp.generated.resources.Res
 import kanbanboard.composeapp.generated.resources.icon
 import org.jetbrains.compose.resources.painterResource
+import woowacourse.kanban.board.Gray20
+import woowacourse.kanban.board.Gray70
+import woowacourse.kanban.board.Red50
 
 @Composable
 fun TextInput(
@@ -36,8 +39,8 @@ fun TextInput(
     isError: Boolean,
     errorText: String
 ) {
-    var borderColor = if (isError) Color(0xFFB3261E) else Color(0xFFE5E7EB)
-    var textColor = if (isError) Color(0xFFB3261E) else Color(0xFF364153)
+    val borderColor = if (isError) Red50 else Gray70
+    val textColor = if (isError) Red50 else Gray20
 
     Text(
         text = label,

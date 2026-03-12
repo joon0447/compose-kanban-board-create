@@ -27,6 +27,10 @@ import androidx.compose.ui.unit.sp
 import kanbanboard.composeapp.generated.resources.Res
 import kanbanboard.composeapp.generated.resources.profile
 import org.jetbrains.compose.resources.painterResource
+import woowacourse.kanban.board.Blue50
+import woowacourse.kanban.board.Blue80
+import woowacourse.kanban.board.Gray10
+import woowacourse.kanban.board.Gray70
 
 @Composable
 fun ProfileButton(
@@ -35,8 +39,8 @@ fun ProfileButton(
     id: Int,
     onClick: () -> Unit
 ) {
-    val backgroundColor = if (state == id) Color(0xFFEFF6FF) else Color.Transparent
-    val borderColor = if (state == id) Color(0xFF1447E6) else Color(0xFFE5E7EB)
+    val backgroundColor = if (state == id) Blue80 else Color.Transparent
+    val borderColor = if (state == id) Blue50 else Gray70
 
     Box(
         modifier = Modifier
