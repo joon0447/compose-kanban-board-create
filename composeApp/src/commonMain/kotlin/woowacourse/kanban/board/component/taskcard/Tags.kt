@@ -14,8 +14,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import woowacourse.kanban.board.AppColors
 import woowacourse.kanban.board.DefaultValue
+import woowacourse.kanban.board.Gray20
+import woowacourse.kanban.board.Gray80
 
 @Preview(showBackground = true)
 @Composable
@@ -55,14 +56,14 @@ private fun TagBox(filteredTag: String) {
         modifier = Modifier
             .clip(RoundedCornerShape(14.dp))
             .background(
-                color = AppColors.TagBackground,
+                color = Gray80,
             )
             .padding(vertical = 4.dp, horizontal = 6.dp),
     ) {
         Text(
             text = filteredTag,
             fontSize = 12.sp,
-            color = AppColors.TagText,
+            color = Gray20,
         )
     }
 }
