@@ -11,6 +11,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -32,8 +33,8 @@ fun Modal() {
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
     var tags by remember { mutableStateOf("") }
-    var state by remember { mutableStateOf(0) }
-    var profile by remember { mutableStateOf(0) }
+    var state by remember { mutableIntStateOf(0) }
+    var profile by remember { mutableIntStateOf(0) }
 
     val isTitleEmpty by remember {
         derivedStateOf {

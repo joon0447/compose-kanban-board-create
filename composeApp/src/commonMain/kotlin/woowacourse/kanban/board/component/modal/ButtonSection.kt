@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -22,8 +23,8 @@ import woowacourse.kanban.board.ComponentText
 @Composable
 @Preview(showBackground = true)
 private fun ButtonSectionPreview() {
-    var state by remember { mutableStateOf(0) }
-    var profile by remember { mutableStateOf(0) }
+    var state by remember { mutableIntStateOf(0) }
+    var profile by remember { mutableIntStateOf(0) }
     ButtonSection(
         state = state,
         profile = profile,
