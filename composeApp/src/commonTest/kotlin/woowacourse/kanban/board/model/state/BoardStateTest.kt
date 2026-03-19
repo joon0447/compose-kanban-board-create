@@ -56,4 +56,66 @@ class BoardStateTest {
         boardState.addCard(data)
         assertThat(boardState.doneTasks).contains(data)
     }
+
+    @Test
+    fun `3개 업무 중 1개를 완료했을 때 완료율은 33%로 계산된다`() {
+        val task1 = TaskCardData(
+            title = Title(value = "업무1"),
+            description = Description(""),
+            tags = Tags(value = "컴포넌트"),
+            task = TaskState.DONE,
+            profile = ProfileState.DINO
+        )
+        val task2 = TaskCardData(
+            title = Title(value = "업무2"),
+            description = Description(""),
+            tags = Tags(value = "컴포넌트"),
+            task = TaskState.TODO,
+            profile = ProfileState.DINO
+        )
+        val task3 = TaskCardData(
+            title = Title(value = "업무3"),
+            description = Description(""),
+            tags = Tags(value = "컴포넌트"),
+            task = TaskState.TODO,
+            profile = ProfileState.DINO
+        )
+
+        boardState.addCard(task1)
+        boardState.addCard(task2)
+        boardState.addCard(task3)
+
+        assertThat(boardState.calculateDoneRate()).isEqualTo(0.33)
+    }
+
+    @Test
+    fun `3개 업무 중 0개를 완료했을 때 완료율은 0%으로 계산된다`() {
+        val task1 = TaskCardData(
+            title = Title(value = "업무1"),
+            description = Description(""),
+            tags = Tags(value = "컴포넌트"),
+            task = TaskState.TODO,
+            profile = ProfileState.DINO
+        )
+        val task2 = TaskCardData(
+            title = Title(value = "업무2"),
+            description = Description(""),
+            tags = Tags(value = "컴포넌트"),
+            task = TaskState.TODO,
+            profile = ProfileState.DINO
+        )
+        val task3 = TaskCardData(
+            title = Title(value = "업무3"),
+            description = Description(""),
+            tags = Tags(value = "컴포넌트"),
+            task = TaskState.TODO,
+            profile = ProfileState.DINO
+        )
+
+        boardState.addCard(task1)
+        boardState.addCard(task2)
+        boardState.addCard(task3)
+
+        assertThat(boardState.calculateDoneRate()).isEqualTo(0.0)
+    }
 }
