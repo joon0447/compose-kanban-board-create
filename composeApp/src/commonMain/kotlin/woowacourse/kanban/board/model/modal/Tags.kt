@@ -13,8 +13,8 @@ data class Tags(val value: String) {
     fun getExtractedTags(): List<String> = value.split(",").map { it.trim() }
 
     companion object {
-        const val MAX_TAGS = 5
-        const val TAG_MAX_TEXT_LENGTH = 5
+        private const val MAX_TAGS = 5
+        private const val TAG_MAX_TEXT_LENGTH = 5
 
         fun isTagsValid(value: String): Boolean {
             if (value.isEmpty()) return true

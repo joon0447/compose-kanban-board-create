@@ -53,7 +53,6 @@ fun TextInputSection(
             value = tagsInputState.value,
             modifier = Modifier.height(100.dp),
             onTextChange = tagsInputState.onChange,
-            supportingText = ComponentText.TAG_SUPPORTING,
             isError = tagsInputState.isError,
         )
     }
@@ -114,7 +113,6 @@ private fun TextInputSectionPreview() {
             value = tagsInputState.value,
             onTextChange = tagsInputState.onChange,
             modifier = Modifier.height(100.dp),
-            supportingText = ComponentText.TAG_SUPPORTING,
             isError = tagsInputState.isError,
         )
     }

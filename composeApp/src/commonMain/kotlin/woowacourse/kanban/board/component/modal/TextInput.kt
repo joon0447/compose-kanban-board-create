@@ -26,6 +26,10 @@ import woowacourse.kanban.board.Gray20
 import woowacourse.kanban.board.Gray40
 import woowacourse.kanban.board.Gray70
 import woowacourse.kanban.board.Red50
+import woowacourse.kanban.board.component.extension.toErrorText
+import woowacourse.kanban.board.component.extension.toLabel
+import woowacourse.kanban.board.component.extension.toPlaceholder
+import woowacourse.kanban.board.component.extension.toSupportingText
 import woowacourse.kanban.board.model.TextInputValue
 import woowacourse.kanban.board.model.modal.Title
 
@@ -36,17 +40,21 @@ fun TextInput(
     onTextChange: (String) -> Unit,
     modifier: Modifier = Modifier,
     singleLine: Boolean = true,
-    supportingText: String? = null,
     isError: Boolean = false,
 ) {
     val borderColor = if (isError) Red50 else Gray70
     val textColor = if (isError) Red50 else Gray20
 
+    val labelText = textInputValue.toLabel()
+    val placeholderText = textInputValue.toPlaceholder()
+    val errorText = textInputValue.toErrorText()
+    val supportingText = textInputValue.toSupportingText()
+
     Column(
         modifier = modifier
     ) {
         Text(
-            text = textInputValue.label,
+            text = labelText,
             fontSize = 14.sp,
             color = Gray20,
             fontWeight = FontWeight.Bold,
@@ -59,7 +67,7 @@ fun TextInput(
             singleLine = singleLine,
             placeholder = {
                 Text(
-                    text = textInputValue.placeholder,
+                    text = placeholderText,
                     color = Gray40,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Normal,
@@ -75,9 +83,9 @@ fun TextInput(
                 }
             },
             supportingText = {
-                if (isError) {
+                if (isError && errorText != null) {
                     Text(
-                        text = textInputValue.errorText,
+                        text = errorText,
                         color = textColor,
                     )
                 } else if (supportingText != null) {
