@@ -16,8 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import woowacourse.kanban.board.Gray70
 import woowacourse.kanban.board.Gray80
-import woowacourse.kanban.board.model.ProfileState
-import woowacourse.kanban.board.model.TaskCardData
+import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.taskcard.TaskCardData
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.Tags

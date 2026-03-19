@@ -1,6 +1,6 @@
-package woowacourse.kanban.board.model
+package woowacourse.kanban.board.model.modal
 
-data class TextInputState(
+class TextInputState(
     val value: String,
     val onChange: (String) -> Unit,
     val isError: Boolean = false

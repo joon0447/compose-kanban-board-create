@@ -1,7 +1,7 @@
 package woowacourse.kanban.board.component.extension
 
 import woowacourse.kanban.board.ComponentText
-import woowacourse.kanban.board.model.TextInputValue
+import woowacourse.kanban.board.model.modal.TextInputValue
 
 
 fun TextInputValue.toLabel(): String = when (this) {

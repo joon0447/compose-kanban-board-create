@@ -3,9 +3,9 @@ package woowacourse.kanban.board.component.taskcard
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
-import woowacourse.kanban.board.model.ProfileState
+import woowacourse.kanban.board.model.modal.ProfileState
 import kotlin.test.Test
-import woowacourse.kanban.board.model.TaskCardData
+import woowacourse.kanban.board.model.taskcard.TaskCardData
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.Tags

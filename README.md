@@ -5,7 +5,8 @@
 ### 1. 리팩토링
 - [x] 비즈니스 로직과 UI 로직 분리하기
 - [x] Tags 내 const 변수 가시성 private 으로 변경하기
-- [ ] Modal 내 상태 분리
+- [x] Modal 내 상태 분리
+- [x] TextInputState 일반 class로 변경
 
 ### 2. 비즈니스 로직
 - [ ] TaskCardData 객체 생성

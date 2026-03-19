@@ -30,7 +30,7 @@ import woowacourse.kanban.board.component.extension.toErrorText
 import woowacourse.kanban.board.component.extension.toLabel
 import woowacourse.kanban.board.component.extension.toPlaceholder
 import woowacourse.kanban.board.component.extension.toSupportingText
-import woowacourse.kanban.board.model.TextInputValue
+import woowacourse.kanban.board.model.modal.TextInputValue
 import woowacourse.kanban.board.model.modal.Title
 
 @Composable

@@ -26,7 +26,7 @@ import woowacourse.kanban.board.Blue50
 import woowacourse.kanban.board.Blue80
 import woowacourse.kanban.board.Gray20
 import woowacourse.kanban.board.Gray70
-import woowacourse.kanban.board.model.ProfileState
+import woowacourse.kanban.board.model.modal.ProfileState
 
 @Composable
 fun ProfileButton(

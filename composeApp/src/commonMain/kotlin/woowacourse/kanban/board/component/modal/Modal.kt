@@ -19,47 +19,31 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import woowacourse.kanban.board.model.ProfileState
+import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.TaskState
-import woowacourse.kanban.board.model.TextInputState
+import woowacourse.kanban.board.model.modal.TextInputState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
+import woowacourse.kanban.board.model.state.rememberModalState
 
 @Composable
 fun Modal(modifier: Modifier = Modifier) {
-    var title by remember { mutableStateOf("") }
-    var description by remember { mutableStateOf("") }
-    var tags by remember { mutableStateOf("") }
-    var taskState by remember { mutableStateOf(TaskState.TODO) }
-    var profileState by remember { mutableStateOf(ProfileState.DINO) }
 
-    val isTitleValid by remember {
-        derivedStateOf {
-            Title.isTitleValid(title)
-        }
-    }
-
-    val isTagsValid by remember {
-        derivedStateOf {
-            Tags.isTagsValid(tags)
-        }
-    }
+    val modalState = rememberModalState()
 
     val titleInputState = TextInputState(
-        value = title,
-        onChange = { title = it },
-        isError = isTitleValid.not(),
+        value = modalState.title,
+        onChange = { modalState.title = it },
+        isError = modalState.isTitleValid.not(),
     )
-
     val descriptionInputState = TextInputState(
-        value = description,
-        onChange = { description = it },
+        value = modalState.description,
+        onChange = { modalState.description = it },
     )
-
     val tagsInputState = TextInputState(
-        value = tags,
-        onChange = { tags = it },
-        isError = isTagsValid.not(),
+        value = modalState.tags,
+        onChange = { modalState.tags = it },
+        isError = modalState.isTagsValid.not(),
     )
 
     Card(
@@ -85,13 +69,13 @@ fun Modal(modifier: Modifier = Modifier) {
                 tagsInputState = tagsInputState,
             )
             ButtonSection(
-                state = taskState,
-                profileState = profileState,
-                onStateClick = { taskState = it },
-                onProfileClick = { profileState = it },
+                state = modalState.taskState,
+                profileState = modalState.profileState,
+                onStateClick = { modalState.taskState = it },
+                onProfileClick = { modalState.profileState = it },
             )
             Footer(
-                isButtonEnabled = isTitleValid && isTagsValid,
+                isButtonEnabled = modalState.isTitleValid && modalState.isTagsValid,
             )
         }
     }

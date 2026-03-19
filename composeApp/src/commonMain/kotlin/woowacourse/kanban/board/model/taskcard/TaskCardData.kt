@@ -1,6 +1,8 @@
-package woowacourse.kanban.board.model
+package woowacourse.kanban.board.model.taskcard
 
+import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
+import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 
