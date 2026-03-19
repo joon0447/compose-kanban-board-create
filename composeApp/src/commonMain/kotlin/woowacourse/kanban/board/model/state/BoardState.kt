@@ -1,6 +1,7 @@
 package woowacourse.kanban.board.model.state
 
 import androidx.compose.runtime.mutableStateListOf
+import kotlin.math.roundToInt
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.taskcard.TaskCardData
 
@@ -15,5 +16,12 @@ class BoardState {
             TaskState.PROGRESS -> progressTasks.add(data)
             TaskState.DONE -> doneTasks.add(data)
         }
+    }
+
+    fun calculateDoneRate(): Float {
+        val totalTasks = todoTasks.size + progressTasks.size + doneTasks.size
+        if (totalTasks == 0) return 0f
+        val doneRate = doneTasks.size.toFloat() / totalTasks.toFloat()
+        return (doneRate * 100).roundToInt() / 100f
     }
 }

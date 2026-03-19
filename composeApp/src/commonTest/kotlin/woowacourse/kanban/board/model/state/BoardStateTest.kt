@@ -85,7 +85,12 @@ class BoardStateTest {
         boardState.addCard(task2)
         boardState.addCard(task3)
 
-        assertThat(boardState.calculateDoneRate()).isEqualTo(0.33)
+        assertThat(boardState.calculateDoneRate()).isEqualTo(0.33f)
+    }
+
+    @Test
+    fun `등록된 업무가 0개일 때 완료율은 0%으로 계산된다`() {
+        assertThat(boardState.calculateDoneRate()).isEqualTo(0.0f)
     }
 
     @Test
@@ -116,6 +121,6 @@ class BoardStateTest {
         boardState.addCard(task2)
         boardState.addCard(task3)
 
-        assertThat(boardState.calculateDoneRate()).isEqualTo(0.0)
+        assertThat(boardState.calculateDoneRate()).isEqualTo(0.0f)
     }
 }
