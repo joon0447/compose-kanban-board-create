@@ -19,7 +19,10 @@ import woowacourse.kanban.board.Gray20
 import woowacourse.kanban.board.model.modal.ProfileState
 
 @Composable
-fun Profile(profile: ProfileState, modifier: Modifier = Modifier) {
+fun Profile(
+    profile: ProfileState,
+    modifier: Modifier = Modifier
+) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Image(
             painter = painterResource(profile.icon),

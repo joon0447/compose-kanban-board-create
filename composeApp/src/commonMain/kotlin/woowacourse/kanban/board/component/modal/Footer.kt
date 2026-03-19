@@ -26,7 +26,10 @@ import woowacourse.kanban.board.ComponentText
 import woowacourse.kanban.board.Gray20
 
 @Composable
-fun Footer(isButtonEnabled: Boolean, modifier: Modifier = Modifier) {
+fun Footer(
+    isButtonEnabled: Boolean,
+    modifier: Modifier = Modifier
+) {
     Column(
         modifier = modifier
             .fillMaxWidth()

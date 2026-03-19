@@ -3,5 +3,5 @@ package woowacourse.kanban.board.model.modal
 class TextInputState(
     val value: String,
     val onChange: (String) -> Unit,
-    val isError: Boolean = false
+    val isError: Boolean = false,
 )

@@ -1,11 +1,11 @@
 package woowacourse.kanban.board.model
 
-import org.assertj.core.api.Assertions.assertThat
-import org.assertj.core.api.Assertions.assertThatThrownBy
-import woowacourse.kanban.board.model.modal.Tags
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatThrownBy
+import woowacourse.kanban.board.model.modal.Tags
 
 class TagsTest {
 

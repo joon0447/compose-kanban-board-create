@@ -51,7 +51,7 @@ fun TextInput(
     val supportingText = textInputValue.toSupportingText()
 
     Column(
-        modifier = modifier
+        modifier = modifier,
     ) {
         Text(
             text = labelText,

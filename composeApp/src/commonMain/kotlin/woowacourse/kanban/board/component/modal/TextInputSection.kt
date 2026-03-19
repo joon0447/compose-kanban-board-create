@@ -14,10 +14,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import woowacourse.kanban.board.ComponentText
+import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.TextInputState
 import woowacourse.kanban.board.model.modal.TextInputValue
-import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 
 @Composable
@@ -79,18 +78,18 @@ private fun TextInputSectionPreview() {
     val titleInputState = TextInputState(
         value = title,
         onChange = { title = it },
-        isError = isTitleValid.not()
+        isError = isTitleValid.not(),
     )
 
     val descriptionInputState = TextInputState(
         value = description,
-        onChange = { description = it }
+        onChange = { description = it },
     )
 
     val tagsInputState = TextInputState(
         value = tags,
         onChange = { tags = it },
-        isError = isTagValid.not()
+        isError = isTagValid.not(),
     )
 
     Column {

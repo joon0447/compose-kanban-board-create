@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import woowacourse.kanban.board.ComponentText
 import woowacourse.kanban.board.Gray20
-import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.TaskState
+import woowacourse.kanban.board.model.modal.ProfileState
 
 @Composable
 fun ButtonSection(
@@ -80,4 +80,3 @@ private fun ButtonSectionPreview() {
         onProfileClick = { profileState = it },
     )
 }
-
