@@ -1,4 +1,4 @@
-package woowacourse.kanban.board
+package woowacourse.kanban.board.component
 
 object ComponentText {
     const val HEADER_LABEL = "새 태스크 생성"
@@ -19,4 +19,8 @@ object ComponentText {
     const val PROFILE_BUTTON_LABEL = "담당자"
     const val CANCEL_BUTTON = "취소"
     const val CREATE_BUTTON = "생성"
+
+    const val BOARD_HEADER_TITLE = "Compose Desktop 칸반 보드"
+    const val BOARD_HEADER_PROGRESS = "완료율: "
+    const val BOARD_TASK_CREATE_BUTTON = "새 태스크 생성"
 }

@@ -1,17 +1,22 @@
 package woowacourse.kanban.board.model.board
 
-import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import kotlin.math.roundToInt
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.taskcard.TaskCardData
-import kotlin.math.roundToInt
 
 class BoardState {
     val todoTasks = mutableStateListOf<TaskCardData>()
     val progressTasks = mutableStateListOf<TaskCardData>()
     val doneTasks = mutableStateListOf<TaskCardData>()
+    var isShowModal by mutableStateOf(false)
 
-    val totalTasks: Int
+    val totalTaskCount: Int
         get() = todoTasks.size + progressTasks.size + doneTasks.size
 
     fun addCard(data: TaskCardData) {
@@ -26,6 +31,13 @@ class BoardState {
         val totalTasks = todoTasks.size + progressTasks.size + doneTasks.size
         if (totalTasks == 0) return 0f
         val doneRate = doneTasks.size.toFloat() / totalTasks.toFloat()
-        return (doneRate * 100).roundToInt() / 100f
+        return (doneRate * 100).roundToInt() / 100f * 100
+    }
+
+    fun toggleShowModal() {
+        isShowModal = isShowModal.not()
     }
 }
+
+@Composable
+fun rememberBoardState(): BoardState = remember { BoardState() }

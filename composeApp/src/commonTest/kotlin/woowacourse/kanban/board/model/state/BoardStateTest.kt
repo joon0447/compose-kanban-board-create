@@ -117,7 +117,7 @@ class BoardStateTest {
         boardState.addCard(task2)
         boardState.addCard(task3)
 
-        assertThat(boardState.totalTasks).isEqualTo(3)
+        assertThat(boardState.totalTaskCount).isEqualTo(3)
     }
 
     @Test
