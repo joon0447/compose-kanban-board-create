@@ -1,5 +1,6 @@
 package woowacourse.kanban.board.model.board
 
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.taskcard.TaskCardData
@@ -9,6 +10,9 @@ class BoardState {
     val todoTasks = mutableStateListOf<TaskCardData>()
     val progressTasks = mutableStateListOf<TaskCardData>()
     val doneTasks = mutableStateListOf<TaskCardData>()
+
+    val totalTasks: Int
+        get() = todoTasks.size + progressTasks.size + doneTasks.size
 
     fun addCard(data: TaskCardData) {
         when (data.task) {
