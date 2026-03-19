@@ -4,6 +4,7 @@ import kotlin.test.Test
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import woowacourse.kanban.board.model.TaskState
+import woowacourse.kanban.board.model.board.BoardState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags

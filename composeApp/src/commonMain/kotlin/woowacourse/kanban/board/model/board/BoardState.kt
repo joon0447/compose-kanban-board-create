@@ -1,9 +1,9 @@
-package woowacourse.kanban.board.model.state
+package woowacourse.kanban.board.model.board
 
 import androidx.compose.runtime.mutableStateListOf
-import kotlin.math.roundToInt
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.taskcard.TaskCardData
+import kotlin.math.roundToInt
 
 class BoardState {
     val todoTasks = mutableStateListOf<TaskCardData>()
