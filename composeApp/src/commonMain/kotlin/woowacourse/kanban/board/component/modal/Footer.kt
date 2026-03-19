@@ -27,6 +27,8 @@ import woowacourse.kanban.board.component.ComponentText
 
 @Composable
 fun Footer(
+    onClickClose: () -> Unit,
+    onClickTaskCreate: () -> Unit,
     isButtonEnabled: Boolean,
     modifier: Modifier = Modifier
 ) {
@@ -46,12 +48,14 @@ fun Footer(
                 containerColor = Color.Transparent,
                 contentColor = Gray20,
                 text = ComponentText.CANCEL_BUTTON,
+                onClick = onClickClose
             )
             Spacer(modifier = Modifier.width(12.dp))
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
                 text = ComponentText.CREATE_BUTTON,
+                onClick = onClickTaskCreate
             )
         }
     }
@@ -87,5 +91,9 @@ private fun FooterButton(
 @Preview(showBackground = true)
 @Composable
 private fun FooterPreview() {
-    Footer(true)
+    Footer(
+        onClickClose = {},
+        onClickTaskCreate = {},
+        isButtonEnabled = true
+    )
 }

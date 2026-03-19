@@ -14,6 +14,7 @@ class BoardState {
     val todoTasks = mutableStateListOf<TaskCardData>()
     val progressTasks = mutableStateListOf<TaskCardData>()
     val doneTasks = mutableStateListOf<TaskCardData>()
+    var shouldShowSnackbar by mutableStateOf(false)
     var isShowModal by mutableStateOf(false)
 
     val totalTaskCount: Int

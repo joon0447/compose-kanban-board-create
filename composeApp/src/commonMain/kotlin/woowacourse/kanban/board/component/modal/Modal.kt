@@ -14,14 +14,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import woowacourse.kanban.board.model.modal.Description
+import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.TextInputState
+import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.modal.rememberModalState
+import woowacourse.kanban.board.model.taskcard.TaskCardData
 
 @Composable
-fun Modal(modifier: Modifier = Modifier) {
-
+fun Modal(
+    onClickClose: () -> Unit,
+    onClickTaskCreate: (TaskCardData) -> Unit,
+    modifier: Modifier = Modifier,
+) {
     val modalState = rememberModalState()
-
     val titleInputState = TextInputState(
         value = modalState.title,
         onChange = { modalState.title = it },
@@ -52,7 +58,9 @@ fun Modal(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(24.dp),
         ) {
-            Header()
+            Header(
+                onClickClose = onClickClose
+            )
             HorizontalDivider()
             TextInputSection(
                 titleInputState = titleInputState,
@@ -66,6 +74,17 @@ fun Modal(modifier: Modifier = Modifier) {
                 onProfileClick = { modalState.profileState = it },
             )
             Footer(
+                onClickClose = onClickClose,
+                onClickTaskCreate = {
+                    val data = TaskCardData(
+                        title = Title(value = modalState.title),
+                        description = Description(value = modalState.description),
+                        tags = Tags(value = modalState.tags),
+                        task = modalState.taskState,
+                        profile = modalState.profileState
+                    )
+                    onClickTaskCreate(data)
+                },
                 isButtonEnabled = modalState.isTitleValid && modalState.isTagsValid,
             )
         }
@@ -75,5 +94,8 @@ fun Modal(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 private fun ModalPreview() {
-    Modal()
+    Modal(
+        onClickClose = {},
+        onClickTaskCreate = {}
+    )
 }

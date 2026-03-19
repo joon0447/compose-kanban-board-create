@@ -20,10 +20,9 @@
     - 완료율은 인디케이터바로도 출력되어야 함
     - 새 태스크 생성 버튼 출력
     - 새 태스크 생성 버튼을 누르면 Modal이 출력
+- [x] Modal
+    - 생성 조건 만족 후 생성 버튼을 누르면, Modal 창 닫힘
+    - TaskCard가 생성되어 Modal 창이 닫히게 되면 SnackBar를 화면 하단 센터에 출력 ("새로운 태스크가 추가되었습니다")
 - [ ] TaskCard 목록
     - TaskCard의 진행 상태별로 (To Do, In Progress, Done) 섹션 분리하여 출력
     - 각 진행 상태의 TaskCard 개수 출력
-- [ ] Modal
-    - Modal이 화면에 출력될 때, 배경 딤드 처리
-    - 생성 조건 만족 후 생성 버튼을 누르면, Modal 창 닫힘
-    - TaskCard가 생성되어 Modal 창이 닫히게 되면 SnackBar를 화면 하단 센터에 출력 ("새로운 태스크가 추가되었습니다")
