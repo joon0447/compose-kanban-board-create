@@ -1,5 +1,6 @@
 package woowacourse.kanban.board.model.state
 
+import kotlin.test.Test
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import woowacourse.kanban.board.model.TaskState
@@ -8,7 +9,6 @@ import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
-import kotlin.test.Test
 
 class BoardStateTest {
     private lateinit var boardState: BoardState
@@ -28,7 +28,7 @@ class BoardStateTest {
             profile = ProfileState.DINO
         )
         boardState.addCard(data)
-        assertThat(boardState.toDoList).contains(data)
+        assertThat(boardState.todoTasks).contains(data)
     }
 
     @Test
@@ -41,7 +41,7 @@ class BoardStateTest {
             profile = ProfileState.DINO
         )
         boardState.addCard(data)
-        assertThat(boardState.progressList).contains(data)
+        assertThat(boardState.progressTasks).contains(data)
     }
 
     @Test
@@ -54,6 +54,6 @@ class BoardStateTest {
             profile = ProfileState.DINO
         )
         boardState.addCard(data)
-        assertThat(boardState.doneList).contains(data)
+        assertThat(boardState.doneTasks).contains(data)
     }
 }
