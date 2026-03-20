@@ -13,7 +13,7 @@ object ComponentText {
     const val TAG_ERROR = "태그 형식이 올바르지 않습니다."
 
     const val STATE_BUTTON_LABEL = "상태"
-    const val STATE_BUTTON_TODO = "To do"
+    const val STATE_BUTTON_TODO = "To Do"
     const val STATE_BUTTON_PROGRESS = "In Progress"
     const val STATE_BUTTON_DONE = "Done"
     const val PROFILE_BUTTON_LABEL = "담당자"
