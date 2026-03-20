@@ -49,7 +49,7 @@ fun StateButton(
             .clickable { onClick() }
             .padding(horizontal = 50.dp, vertical = 14.dp),
 
-        ) {
+    ) {
         Text(
             text = myState.toText(),
             textAlign = TextAlign.Center,

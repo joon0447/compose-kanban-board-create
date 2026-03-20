@@ -34,7 +34,37 @@ import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
 
 @Composable
-fun TaskColumn(
+fun TaskColumnSection(
+    todoTasks: List<TaskCardData>,
+    progressTasks: List<TaskCardData>,
+    doneTasks: List<TaskCardData>,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(24.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+        TaskColumn(
+            taskState = TaskState.TODO,
+            tasks = todoTasks,
+            modifier = Modifier.weight(1f),
+        )
+        TaskColumn(
+            taskState = TaskState.PROGRESS,
+            tasks = progressTasks,
+            modifier = Modifier.weight(1f),
+        )
+        TaskColumn(
+            taskState = TaskState.DONE,
+            tasks = doneTasks,
+            modifier = Modifier.weight(1f),
+        )
+    }
+}
+@Composable
+private fun TaskColumn(
     taskState: TaskState,
     tasks: List<TaskCardData>,
     modifier: Modifier = Modifier,
