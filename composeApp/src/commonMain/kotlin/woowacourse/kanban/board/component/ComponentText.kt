@@ -21,7 +21,7 @@ object ComponentText {
     const val CREATE_BUTTON = "생성"
 
     const val BOARD_HEADER_TITLE = "Compose Desktop 칸반 보드"
-    const val BOARD_HEADER_PROGRESS = "완료율: "
+    const val BOARD_HEADER_PROGRESS = "완료율:"
     const val BOARD_TASK_CREATE_BUTTON = "새 태스크 생성"
     const val BOARD_TASK_CREATE_SNACKBAR = "새로운 태스크가 추가되었습니다."
 }

@@ -86,7 +86,7 @@ class BoardStateTest {
         boardState.addCard(task2)
         boardState.addCard(task3)
 
-        assertThat(boardState.calculateDoneRate()).isEqualTo(0.33f)
+        assertThat(boardState.calculateDoneRate()).isEqualTo(33.0f)
     }
 
     @Test
