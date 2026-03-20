@@ -10,6 +10,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import woowacourse.kanban.board.component.ComponentText
 import woowacourse.kanban.board.component.modal.Modal
 import woowacourse.kanban.board.model.board.rememberBoardState
@@ -40,6 +41,9 @@ fun Board(
             if (boardState.isShowModal) {
                 Dialog(
                     onDismissRequest = { boardState.isShowModal = false },
+                    properties = DialogProperties(
+                        usePlatformDefaultWidth = false,
+                    ),
                 ) {
                     Modal(
                         onClickClose = { boardState.isShowModal = false },
@@ -60,7 +64,7 @@ fun Board(
             TaskColumnSection(
                 todoTasks = boardState.todoTasks,
                 progressTasks = boardState.progressTasks,
-                doneTasks = boardState.doneTasks
+                doneTasks = boardState.doneTasks,
             )
         }
     }
