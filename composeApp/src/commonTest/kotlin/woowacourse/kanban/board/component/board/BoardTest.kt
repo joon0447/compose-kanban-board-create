@@ -4,15 +4,12 @@ import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText
-import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.isEditable
-import androidx.compose.ui.test.isRoot
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.test.performTextInput
-import androidx.compose.ui.test.printToLog
 import androidx.compose.ui.test.runComposeUiTest
 import kotlin.test.Test
 import woowacourse.kanban.board.component.ComponentText
@@ -72,6 +69,6 @@ class BoardTest {
         onAllNodes(isEditable())[0].performClick()
         onAllNodes(isEditable())[0].performTextInput("테스트에용")
         onAllNodes(hasText(ComponentText.CREATE_BUTTON))[0].performSemanticsAction(SemanticsActions.OnClick)
-        onNodeWithText(ComponentText.BOARD_TASK_CREATE_SNACKBAR).isDisplayed()
+        onNodeWithText(ComponentText.BOARD_TASK_CREATE_SNACKBAR).assertIsDisplayed()
     }
 }
