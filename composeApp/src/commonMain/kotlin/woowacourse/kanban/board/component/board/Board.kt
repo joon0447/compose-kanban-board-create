@@ -28,7 +28,10 @@ fun Board(
 
     LaunchedEffect(boardState.shouldShowSnackbar) {
         if (boardState.shouldShowSnackbar) {
-            snackbarHostState.showSnackbar(ComponentText.BOARD_TASK_CREATE_SNACKBAR)
+            snackbarHostState.showSnackbar(
+                message = ComponentText.BOARD_TASK_CREATE_SNACKBAR,
+                withDismissAction = true,
+            )
             boardState.shouldShowSnackbar = false
         }
     }
