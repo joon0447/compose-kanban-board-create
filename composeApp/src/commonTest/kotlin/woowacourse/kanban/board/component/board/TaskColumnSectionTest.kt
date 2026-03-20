@@ -4,13 +4,13 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
+import kotlin.test.Test
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
-import kotlin.test.Test
 
 @OptIn(ExperimentalTestApi::class)
 class TaskColumnSectionTest {
