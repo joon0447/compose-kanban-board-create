@@ -57,12 +57,12 @@ fun TaskColumn(
                     .fillMaxHeight()
                     .padding(15.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 items(tasks.size) { task ->
                     TaskCard(
                         data = tasks[task],
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
                     )
                 }
             }
@@ -124,8 +124,8 @@ private fun TaskColumnPreview() {
             description = Description(value = "설명"),
             tags = Tags(value = "ds"),
             task = TaskState.PROGRESS,
-            profile = ProfileState.DINO
-        )
+            profile = ProfileState.DINO,
+        ),
     )
     TaskColumn(
         tasks = tasks,

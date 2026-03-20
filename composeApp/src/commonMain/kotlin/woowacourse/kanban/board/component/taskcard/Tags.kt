@@ -21,7 +21,7 @@ import woowacourse.kanban.board.model.modal.Tags
 @Composable
 fun Tags(
     tags: Tags,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     if (tags.value.isNotEmpty()) {
         FlowRow(

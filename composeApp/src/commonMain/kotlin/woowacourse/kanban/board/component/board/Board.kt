@@ -63,22 +63,22 @@ fun Board(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(24.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
+                horizontalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 TaskColumn(
                     taskState = TaskState.TODO,
                     tasks = boardState.todoTasks,
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f),
                 )
                 TaskColumn(
                     taskState = TaskState.PROGRESS,
                     tasks = boardState.progressTasks,
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f),
                 )
                 TaskColumn(
                     taskState = TaskState.DONE,
                     tasks = boardState.doneTasks,
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f),
                 )
             }
         }

@@ -52,7 +52,7 @@ fun BoardHeader(
         Column(
             modifier = Modifier
                 .padding(vertical = 16.dp, horizontal = 24.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             BoardHeaderTitle(
                 doneTasks = doneTasks,
@@ -63,7 +63,7 @@ fun BoardHeader(
             )
             ProgressBar(
                 doneCount = doneTasks,
-                totalCount = totalTasks
+                totalCount = totalTasks,
             )
         }
     }
@@ -86,7 +86,7 @@ private fun ProgressBar(
             .height(8.dp)
             .clip(RoundedCornerShape(15.dp)),
         color = Color.Blue,
-        trackColor = Color.LightGray
+        trackColor = Color.LightGray,
     )
 }
 
@@ -120,7 +120,7 @@ private fun BoardHeaderTitle(
         }
         TaskCreateButton(
             onClickCreateTask = onClickCreateTask,
-            modifier = Modifier
+            modifier = Modifier,
         )
     }
 }
@@ -191,6 +191,6 @@ private fun BoardHeaderPreview() {
         doneRate = boardState.calculateDoneRate().toInt(),
         doneTasks = boardState.doneTasks.size,
         totalTasks = boardState.totalTaskCount,
-        onClickCreateTask = {}
+        onClickCreateTask = {},
     )
 }

@@ -30,7 +30,7 @@ fun Footer(
     onClickClose: () -> Unit,
     onClickTaskCreate: () -> Unit,
     isButtonEnabled: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
@@ -48,14 +48,14 @@ fun Footer(
                 containerColor = Color.Transparent,
                 contentColor = Gray20,
                 text = ComponentText.CANCEL_BUTTON,
-                onClick = onClickClose
+                onClick = onClickClose,
             )
             Spacer(modifier = Modifier.width(12.dp))
             FooterButton(
                 enabled = isButtonEnabled,
                 containerColor = Blue50,
                 text = ComponentText.CREATE_BUTTON,
-                onClick = onClickTaskCreate
+                onClick = onClickTaskCreate,
             )
         }
     }
@@ -94,6 +94,6 @@ private fun FooterPreview() {
     Footer(
         onClickClose = {},
         onClickTaskCreate = {},
-        isButtonEnabled = true
+        isButtonEnabled = true,
     )
 }

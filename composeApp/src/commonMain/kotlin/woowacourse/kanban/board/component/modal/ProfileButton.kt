@@ -33,7 +33,7 @@ fun ProfileButton(
     currentState: ProfileState,
     myState: ProfileState,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
 
     val backgroundColor = if (currentState == myState) Blue80 else Color.Transparent

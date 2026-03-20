@@ -12,7 +12,7 @@ import woowacourse.kanban.board.Gray30
 @Composable
 fun Description(
     description: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     if (description.isNotEmpty()) {
         Text(
@@ -32,7 +32,7 @@ fun Description(
 private fun DescriptionPreview() {
     Description(
         description = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다." +
-            "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다." +
-            "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
+                "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다." +
+                "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
     )
 }

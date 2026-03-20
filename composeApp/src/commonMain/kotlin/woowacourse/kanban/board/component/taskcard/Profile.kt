@@ -21,7 +21,7 @@ import woowacourse.kanban.board.model.modal.ProfileState
 @Composable
 fun Profile(
     profile: ProfileState,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Image(

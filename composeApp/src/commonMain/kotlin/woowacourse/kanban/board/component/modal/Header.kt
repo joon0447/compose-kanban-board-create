@@ -50,6 +50,6 @@ fun Header(
 @Composable
 fun HeaderPreview() {
     Header(
-        onClickClose = {}
+        onClickClose = {},
     )
 }

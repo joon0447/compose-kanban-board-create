@@ -81,7 +81,7 @@ fun Modal(
                         description = Description(value = modalState.description),
                         tags = Tags(value = modalState.tags),
                         task = modalState.taskState,
-                        profile = modalState.profileState
+                        profile = modalState.profileState,
                     )
                     onClickTaskCreate(data)
                 },

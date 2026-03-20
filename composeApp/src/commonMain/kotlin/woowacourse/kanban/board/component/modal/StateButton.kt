@@ -29,7 +29,7 @@ fun StateButton(
     currentState: TaskState,
     myState: TaskState,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
 
     val backgroundColor = if (currentState == myState) Blue80 else Color.Transparent
@@ -49,7 +49,7 @@ fun StateButton(
             .clickable { onClick() }
             .padding(horizontal = 50.dp, vertical = 14.dp),
 
-    ) {
+        ) {
         Text(
             text = myState.toText(),
             textAlign = TextAlign.Center,
