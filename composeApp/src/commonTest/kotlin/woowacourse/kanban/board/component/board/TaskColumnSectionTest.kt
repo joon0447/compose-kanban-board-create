@@ -8,6 +8,7 @@ import kotlin.test.Test
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
@@ -20,7 +21,7 @@ class TaskColumnSectionTest {
         val data = TaskCardData(
             title = Title(value = "제목"),
             description = Description("설명"),
-            tags = Tags("dd"),
+            tags = Tags(listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
@@ -41,7 +42,7 @@ class TaskColumnSectionTest {
         val data = TaskCardData(
             title = Title(value = "제목"),
             description = Description("설명"),
-            tags = Tags("dd"),
+            tags = Tags(listOf(Tag("컴포넌트"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO
         )
@@ -62,7 +63,7 @@ class TaskColumnSectionTest {
         val data = TaskCardData(
             title = Title(value = "제목"),
             description = Description("설명"),
-            tags = Tags("dd"),
+            tags = Tags(listOf(Tag("컴포넌트"))),
             task = TaskState.DONE,
             profile = ProfileState.DINO
         )

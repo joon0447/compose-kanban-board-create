@@ -8,6 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 
@@ -19,7 +20,9 @@ class ModalState {
     var profileState by mutableStateOf(ProfileState.DINO)
 
     val isTitleValid by derivedStateOf { Title.Companion.isTitleValid(title) }
-    val isTagsValid by derivedStateOf { Tags.Companion.isTagsValid(tags) }
+    val isTagsValid by derivedStateOf {
+        Tag.isTagValid(tags) && Tags.isTagsValid(Tag.extractedTags(tags))
+    }
 }
 
 @Composable

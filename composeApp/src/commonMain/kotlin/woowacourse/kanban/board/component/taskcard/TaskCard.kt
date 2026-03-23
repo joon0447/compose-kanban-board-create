@@ -19,6 +19,7 @@ import woowacourse.kanban.board.Gray80
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
@@ -61,7 +62,7 @@ private fun TaskCardPreview() {
         data = TaskCardData(
             title = Title(value = "LazyColumn 컴포넌트 구현"),
             description = Description(value = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다."),
-            tags = Tags(value = "컴포넌트,성능"),
+            tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),
@@ -75,7 +76,7 @@ private fun TaskCardEmptyDescriptionPreview() {
         data = TaskCardData(
             title = Title(value = "LazyColumn 컴포넌트 구현"),
             description = Description(value = ""),
-            tags = Tags(value = "컴포넌트,성능"),
+            tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),
@@ -89,7 +90,7 @@ private fun TaskCardEmptyTagPreview() {
         data = TaskCardData(
             title = Title(value = "LazyColumn 컴포넌트 구현"),
             description = Description(value = "세로 스크롤"),
-            tags = Tags(value = ""),
+            tags = Tags(value = emptyList()),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),
@@ -103,7 +104,7 @@ private fun TaskCardEmptyTagAndDescriptionPreview() {
         data = TaskCardData(
             title = Title(value = "LazyColumn 컴포넌트 구현"),
             description = Description(value = ""),
-            tags = Tags(value = ""),
+            tags = Tags(value = emptyList()),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),
@@ -117,7 +118,7 @@ private fun TaskCardLongTitlePreview() {
         data = TaskCardData(
             title = Title(value = "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현"),
             description = Description(value = ""),
-            tags = Tags(value = ""),
+            tags = Tags(value = emptyList()),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),
@@ -139,7 +140,7 @@ private fun TaskCardLongDescriptionPreview() {
                     "세로 스크롤 세로 스크롤세로 스크롤" +
                     "  세로 스크롤세로 스크롤 세로 스크롤"
             ),
-            tags = Tags(value = ""),
+            tags = Tags(value = emptyList()),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),

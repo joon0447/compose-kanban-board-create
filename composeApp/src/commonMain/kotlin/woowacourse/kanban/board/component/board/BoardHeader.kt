@@ -36,6 +36,7 @@ import woowacourse.kanban.board.component.state.BoardState
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.taskcard.TaskCardData
 
@@ -161,21 +162,21 @@ private fun BoardHeaderPreview() {
     val task1 = TaskCardData(
         title = woowacourse.kanban.board.model.modal.Title(value = "업무1"),
         description = Description(""),
-        tags = Tags(value = "컴포넌트"),
+        tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
         task = TaskState.DONE,
         profile = ProfileState.DINO,
     )
     val task2 = TaskCardData(
         title = woowacourse.kanban.board.model.modal.Title(value = "업무2"),
         description = Description(""),
-        tags = Tags(value = "컴포넌트"),
+        tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
         task = TaskState.TODO,
         profile = ProfileState.DINO,
     )
     val task3 = TaskCardData(
         title = woowacourse.kanban.board.model.modal.Title(value = "업무3"),
         description = Description(""),
-        tags = Tags(value = "컴포넌트"),
+        tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
         task = TaskState.TODO,
         profile = ProfileState.DINO,
     )
@@ -212,21 +213,21 @@ private fun BoardHeaderAllTaskDonePreview() {
     val task1 = TaskCardData(
         title = woowacourse.kanban.board.model.modal.Title(value = "업무1"),
         description = Description(""),
-        tags = Tags(value = "컴포넌트"),
+        tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
         task = TaskState.DONE,
         profile = ProfileState.DINO,
     )
     val task2 = TaskCardData(
         title = woowacourse.kanban.board.model.modal.Title(value = "업무2"),
         description = Description(""),
-        tags = Tags(value = "컴포넌트"),
+        tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
         task = TaskState.DONE,
         profile = ProfileState.DINO,
     )
     val task3 = TaskCardData(
         title = woowacourse.kanban.board.model.modal.Title(value = "업무3"),
         description = Description(""),
-        tags = Tags(value = "컴포넌트"),
+        tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
         task = TaskState.DONE,
         profile = ProfileState.DINO,
     )

@@ -30,6 +30,7 @@ import woowacourse.kanban.board.component.extension.toErrorText
 import woowacourse.kanban.board.component.extension.toLabel
 import woowacourse.kanban.board.component.extension.toPlaceholder
 import woowacourse.kanban.board.component.extension.toSupportingText
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.TextInputValue
 import woowacourse.kanban.board.model.modal.Title
@@ -181,11 +182,12 @@ private fun TagsInputEmptyPreview() {
 @Preview(showBackground = true, heightDp = 100)
 @Composable
 private fun InvalidTagsInputPreview() {
-    var tags by remember { mutableStateOf(",,") }
+    var tags by remember { mutableStateOf("태그") }
 
     val isTagValid by remember {
         derivedStateOf {
-            Tags.isTagsValid(tags)
+            val extractedTags = Tag.extractedTags(tags)
+            Tags.isTagsValid(extractedTags)
         }
     }
 
@@ -202,11 +204,13 @@ private fun InvalidTagsInputPreview() {
 @Preview(showBackground = true, heightDp = 100)
 @Composable
 private fun ValidTagsInputPreview() {
-    var tags by remember { mutableStateOf("태그1,태그2") }
+
+    var tags by remember { mutableStateOf("태그1") }
 
     val isTagValid by remember {
         derivedStateOf {
-            Tags.isTagsValid(tags)
+            val extractedTags = Tag.extractedTags(tags)
+            Tags.isTagsValid(extractedTags)
         }
     }
 

@@ -14,11 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import woowacourse.kanban.board.component.state.rememberModalState
 import woowacourse.kanban.board.model.modal.Description
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.TextInputState
 import woowacourse.kanban.board.model.modal.Title
-import woowacourse.kanban.board.component.state.rememberModalState
 import woowacourse.kanban.board.model.taskcard.TaskCardData
 
 @Composable
@@ -79,7 +80,7 @@ fun Modal(
                     val data = TaskCardData(
                         title = Title(value = modalState.title),
                         description = Description(value = modalState.description),
-                        tags = Tags(value = modalState.tags),
+                        tags = Tags(Tag.extractedTags(modalState.tags)),
                         task = modalState.taskState,
                         profile = modalState.profileState,
                     )

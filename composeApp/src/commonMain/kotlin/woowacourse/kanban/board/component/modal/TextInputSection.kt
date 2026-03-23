@@ -14,6 +14,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.TextInputState
 import woowacourse.kanban.board.model.modal.TextInputValue
@@ -72,7 +73,8 @@ private fun TextInputSectionInvalidTitlePreview() {
 
     val isTagValid by remember {
         derivedStateOf {
-            Tags.isTagsValid(tags)
+            val extractedTags = Tag.extractedTags(tags)
+            Tags.isTagsValid(extractedTags)
         }
     }
     val titleInputState = TextInputState(
@@ -132,7 +134,8 @@ private fun TextInputSectionValidTitlePreview() {
 
     val isTagValid by remember {
         derivedStateOf {
-            Tags.isTagsValid(tags)
+            val extractedTags = Tag.extractedTags(tags)
+            Tags.isTagsValid(extractedTags)
         }
     }
     val titleInputState = TextInputState(
@@ -192,7 +195,7 @@ private fun TextInputSectionInvalidTagPreview() {
 
     val isTagValid by remember {
         derivedStateOf {
-            Tags.isTagsValid(tags)
+            Tag.isTagValid(tags)
         }
     }
     val titleInputState = TextInputState(
@@ -252,7 +255,8 @@ private fun TextInputSectionValidTagPreview() {
 
     val isTagValid by remember {
         derivedStateOf {
-            Tags.isTagsValid(tags)
+            val extractedTags = Tag.extractedTags(tags)
+            Tags.isTagsValid(extractedTags)
         }
     }
     val titleInputState = TextInputState(
@@ -312,7 +316,8 @@ private fun TextInputSectionAllValueInputPreview() {
 
     val isTagValid by remember {
         derivedStateOf {
-            Tags.isTagsValid(tags)
+            val extractedTags = Tag.extractedTags(tags)
+            Tags.isTagsValid(extractedTags)
         }
     }
     val titleInputState = TextInputState(

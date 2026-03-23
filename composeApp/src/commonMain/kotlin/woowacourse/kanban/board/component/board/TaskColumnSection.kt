@@ -31,6 +31,7 @@ import woowacourse.kanban.board.component.taskcard.TaskCard
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
@@ -175,7 +176,7 @@ private fun TaskColumnTodoPreview() {
         TaskCardData(
             title = Title(value = "제목"),
             description = Description(value = "설명"),
-            tags = Tags(value = "ds"),
+            tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),
@@ -193,7 +194,7 @@ private fun TaskColumnProgressPreview() {
         TaskCardData(
             title = Title(value = "제목"),
             description = Description(value = "설명"),
-            tags = Tags(value = "ds"),
+            tags = Tags(value = listOf(Tag(value = "컴포넌트"), Tag("zjavh"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),
@@ -211,7 +212,7 @@ private fun TaskColumnDonePreview() {
         TaskCardData(
             title = Title(value = "제목"),
             description = Description(value = "설명"),
-            tags = Tags(value = "ds"),
+            tags = Tags(value = listOf(Tag(value = "컴포넌트"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         ),

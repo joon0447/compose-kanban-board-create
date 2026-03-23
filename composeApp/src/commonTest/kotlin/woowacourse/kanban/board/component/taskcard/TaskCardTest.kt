@@ -7,6 +7,7 @@ import kotlin.test.Test
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
@@ -20,7 +21,7 @@ class TaskCardTest {
         val taskCardData = TaskCardData(
             title = Title("LazyColumn 컴포넌트 구현"),
             description = Description("세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다."),
-            tags = Tags("컴포넌트,성능"),
+            tags = Tags(listOf(Tag("컴포넌트"), Tag("성능"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO,
         )

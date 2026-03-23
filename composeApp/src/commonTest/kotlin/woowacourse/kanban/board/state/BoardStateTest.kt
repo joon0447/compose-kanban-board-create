@@ -1,4 +1,4 @@
-package woowacourse.kanban.board.component.state
+package woowacourse.kanban.board.state
 
 import kotlin.test.Test
 import org.assertj.core.api.Assertions.assertThat
@@ -7,6 +7,7 @@ import woowacourse.kanban.board.component.state.BoardState
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
+import woowacourse.kanban.board.model.modal.Tag
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
@@ -24,7 +25,7 @@ class BoardStateTest {
         val data = TaskCardData(
             title = Title(value = "업무1"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
@@ -37,7 +38,7 @@ class BoardStateTest {
         val data = TaskCardData(
             title = Title(value = "업무1"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO
         )
@@ -50,7 +51,7 @@ class BoardStateTest {
         val data = TaskCardData(
             title = Title(value = "업무1"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.DONE,
             profile = ProfileState.DINO
         )
@@ -63,21 +64,21 @@ class BoardStateTest {
         val task1 = TaskCardData(
             title = Title(value = "업무1"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.DONE,
             profile = ProfileState.DINO
         )
         val task2 = TaskCardData(
             title = Title(value = "업무2"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
         val task3 = TaskCardData(
             title = Title(value = "업무3"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
@@ -95,21 +96,21 @@ class BoardStateTest {
         val task1 = TaskCardData(
             title = Title(value = "업무1"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
         val task2 = TaskCardData(
             title = Title(value = "업무2"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.DONE,
             profile = ProfileState.DINO
         )
         val task3 = TaskCardData(
             title = Title(value = "업무3"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.PROGRESS,
             profile = ProfileState.DINO
         )
@@ -131,21 +132,21 @@ class BoardStateTest {
         val task1 = TaskCardData(
             title = Title(value = "업무1"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
         val task2 = TaskCardData(
             title = Title(value = "업무2"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
         val task3 = TaskCardData(
             title = Title(value = "업무3"),
             description = Description(""),
-            tags = Tags(value = "컴포넌트"),
+            tags = Tags(value = listOf(Tag("컴포넌트"))),
             task = TaskState.TODO,
             profile = ProfileState.DINO
         )
