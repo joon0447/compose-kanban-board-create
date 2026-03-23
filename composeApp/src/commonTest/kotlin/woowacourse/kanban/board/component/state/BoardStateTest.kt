@@ -1,4 +1,4 @@
-package woowacourse.kanban.board.model.state
+package woowacourse.kanban.board.component.state
 
 import kotlin.test.Test
 import org.assertj.core.api.Assertions.assertThat
