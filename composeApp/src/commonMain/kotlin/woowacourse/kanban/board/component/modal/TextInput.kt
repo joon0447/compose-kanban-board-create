@@ -30,6 +30,7 @@ import woowacourse.kanban.board.component.extension.toErrorText
 import woowacourse.kanban.board.component.extension.toLabel
 import woowacourse.kanban.board.component.extension.toPlaceholder
 import woowacourse.kanban.board.component.extension.toSupportingText
+import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.TextInputValue
 import woowacourse.kanban.board.model.modal.Title
 
@@ -105,9 +106,9 @@ fun TextInput(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, heightDp = 100)
 @Composable
-private fun TextInputPreview() {
+private fun TitleInputEmptyPreview() {
     var title by remember { mutableStateOf("") }
 
     val isTitleValid by remember {
@@ -122,6 +123,99 @@ private fun TextInputPreview() {
             value = title,
             onTextChange = { title = it },
             isError = isTitleValid.not(),
+        )
+    }
+}
+
+@Preview(showBackground = true, heightDp = 100)
+@Composable
+private fun TitleInputPreview() {
+    var title by remember { mutableStateOf("제목") }
+
+    val isTitleValid by remember {
+        derivedStateOf {
+            Title.isTitleValid(title)
+        }
+    }
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TITLE,
+            value = title,
+            onTextChange = { title = it },
+            isError = isTitleValid.not(),
+        )
+    }
+}
+
+@Preview(showBackground = true, heightDp = 100)
+@Composable
+private fun DescriptionInputEmptyPreview() {
+    var description by remember { mutableStateOf("") }
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.DESCRIPTION,
+            value = description,
+            onTextChange = { description = it },
+            isError = false,
+        )
+    }
+}
+
+@Preview(showBackground = true, heightDp = 100)
+@Composable
+private fun TagsInputEmptyPreview() {
+    var tags by remember { mutableStateOf("") }
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TAGS,
+            value = tags,
+            onTextChange = { tags = it },
+            isError = false,
+        )
+    }
+}
+
+@Preview(showBackground = true, heightDp = 100)
+@Composable
+private fun InvalidTagsInputPreview() {
+    var tags by remember { mutableStateOf(",,") }
+
+    val isTagValid by remember {
+        derivedStateOf {
+            Tags.isTagsValid(tags)
+        }
+    }
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TAGS,
+            value = tags,
+            onTextChange = { tags = it },
+            isError = isTagValid.not(),
+        )
+    }
+}
+
+@Preview(showBackground = true, heightDp = 100)
+@Composable
+private fun ValidTagsInputPreview() {
+    var tags by remember { mutableStateOf("태그1,태그2") }
+
+    val isTagValid by remember {
+        derivedStateOf {
+            Tags.isTagsValid(tags)
+        }
+    }
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TAGS,
+            value = tags,
+            onTextChange = { tags = it },
+            isError = isTagValid.not(),
         )
     }
 }

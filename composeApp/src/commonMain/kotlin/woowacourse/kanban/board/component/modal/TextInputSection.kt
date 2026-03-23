@@ -59,10 +59,250 @@ fun TextInputSection(
 
 @Preview(showBackground = true)
 @Composable
-private fun TextInputSectionPreview() {
+private fun TextInputSectionInvalidTitlePreview() {
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
     var tags by remember { mutableStateOf("") }
+
+    val isTitleValid by remember {
+        derivedStateOf {
+            Title.isTitleValid(title)
+        }
+    }
+
+    val isTagValid by remember {
+        derivedStateOf {
+            Tags.isTagsValid(tags)
+        }
+    }
+    val titleInputState = TextInputState(
+        value = title,
+        onChange = { title = it },
+        isError = isTitleValid.not(),
+    )
+
+    val descriptionInputState = TextInputState(
+        value = description,
+        onChange = { description = it },
+    )
+
+    val tagsInputState = TextInputState(
+        value = tags,
+        onChange = { tags = it },
+        isError = isTagValid.not(),
+    )
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TITLE,
+            value = titleInputState.value,
+            modifier = Modifier.height(100.dp),
+            onTextChange = titleInputState.onChange,
+            isError = titleInputState.isError,
+        )
+        TextInput(
+            textInputValue = TextInputValue.DESCRIPTION,
+            value = descriptionInputState.value,
+            singleLine = false,
+            modifier = Modifier.height(200.dp),
+            onTextChange = descriptionInputState.onChange,
+        )
+        TextInput(
+            textInputValue = TextInputValue.TAGS,
+            value = tagsInputState.value,
+            onTextChange = tagsInputState.onChange,
+            modifier = Modifier.height(100.dp),
+            isError = tagsInputState.isError,
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun TextInputSectionValidTitlePreview() {
+    var title by remember { mutableStateOf("제목") }
+    var description by remember { mutableStateOf("") }
+    var tags by remember { mutableStateOf("") }
+
+    val isTitleValid by remember {
+        derivedStateOf {
+            Title.isTitleValid(title)
+        }
+    }
+
+    val isTagValid by remember {
+        derivedStateOf {
+            Tags.isTagsValid(tags)
+        }
+    }
+    val titleInputState = TextInputState(
+        value = title,
+        onChange = { title = it },
+        isError = isTitleValid.not(),
+    )
+
+    val descriptionInputState = TextInputState(
+        value = description,
+        onChange = { description = it },
+    )
+
+    val tagsInputState = TextInputState(
+        value = tags,
+        onChange = { tags = it },
+        isError = isTagValid.not(),
+    )
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TITLE,
+            value = titleInputState.value,
+            modifier = Modifier.height(100.dp),
+            onTextChange = titleInputState.onChange,
+            isError = titleInputState.isError,
+        )
+        TextInput(
+            textInputValue = TextInputValue.DESCRIPTION,
+            value = descriptionInputState.value,
+            singleLine = false,
+            modifier = Modifier.height(200.dp),
+            onTextChange = descriptionInputState.onChange,
+        )
+        TextInput(
+            textInputValue = TextInputValue.TAGS,
+            value = tagsInputState.value,
+            onTextChange = tagsInputState.onChange,
+            modifier = Modifier.height(100.dp),
+            isError = tagsInputState.isError,
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun TextInputSectionInvalidTagPreview() {
+    var title by remember { mutableStateOf("제목") }
+    var description by remember { mutableStateOf("") }
+    var tags by remember { mutableStateOf("태그,,") }
+
+    val isTitleValid by remember {
+        derivedStateOf {
+            Title.isTitleValid(title)
+        }
+    }
+
+    val isTagValid by remember {
+        derivedStateOf {
+            Tags.isTagsValid(tags)
+        }
+    }
+    val titleInputState = TextInputState(
+        value = title,
+        onChange = { title = it },
+        isError = isTitleValid.not(),
+    )
+
+    val descriptionInputState = TextInputState(
+        value = description,
+        onChange = { description = it },
+    )
+
+    val tagsInputState = TextInputState(
+        value = tags,
+        onChange = { tags = it },
+        isError = isTagValid.not(),
+    )
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TITLE,
+            value = titleInputState.value,
+            modifier = Modifier.height(100.dp),
+            onTextChange = titleInputState.onChange,
+            isError = titleInputState.isError,
+        )
+        TextInput(
+            textInputValue = TextInputValue.DESCRIPTION,
+            value = descriptionInputState.value,
+            singleLine = false,
+            modifier = Modifier.height(200.dp),
+            onTextChange = descriptionInputState.onChange,
+        )
+        TextInput(
+            textInputValue = TextInputValue.TAGS,
+            value = tagsInputState.value,
+            onTextChange = tagsInputState.onChange,
+            modifier = Modifier.height(100.dp),
+            isError = tagsInputState.isError,
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun TextInputSectionValidTagPreview() {
+    var title by remember { mutableStateOf("제목") }
+    var description by remember { mutableStateOf("") }
+    var tags by remember { mutableStateOf("태그1,태그2,태그3") }
+
+    val isTitleValid by remember {
+        derivedStateOf {
+            Title.isTitleValid(title)
+        }
+    }
+
+    val isTagValid by remember {
+        derivedStateOf {
+            Tags.isTagsValid(tags)
+        }
+    }
+    val titleInputState = TextInputState(
+        value = title,
+        onChange = { title = it },
+        isError = isTitleValid.not(),
+    )
+
+    val descriptionInputState = TextInputState(
+        value = description,
+        onChange = { description = it },
+    )
+
+    val tagsInputState = TextInputState(
+        value = tags,
+        onChange = { tags = it },
+        isError = isTagValid.not(),
+    )
+
+    Column {
+        TextInput(
+            textInputValue = TextInputValue.TITLE,
+            value = titleInputState.value,
+            modifier = Modifier.height(100.dp),
+            onTextChange = titleInputState.onChange,
+            isError = titleInputState.isError,
+        )
+        TextInput(
+            textInputValue = TextInputValue.DESCRIPTION,
+            value = descriptionInputState.value,
+            singleLine = false,
+            modifier = Modifier.height(200.dp),
+            onTextChange = descriptionInputState.onChange,
+        )
+        TextInput(
+            textInputValue = TextInputValue.TAGS,
+            value = tagsInputState.value,
+            onTextChange = tagsInputState.onChange,
+            modifier = Modifier.height(100.dp),
+            isError = tagsInputState.isError,
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun TextInputSectionAllValueInputPreview() {
+    var title by remember { mutableStateOf("제목") }
+    var description by remember { mutableStateOf("설명이에요") }
+    var tags by remember { mutableStateOf("태그") }
 
     val isTitleValid by remember {
         derivedStateOf {

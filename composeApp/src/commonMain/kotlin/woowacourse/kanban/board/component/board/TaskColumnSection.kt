@@ -141,18 +141,72 @@ private fun TaskColumnHeader(
     }
 }
 
-@Preview
+@Preview(widthDp = 600)
 @Composable
-private fun TaskColumnHeaderPreview() {
+private fun TaskColumnProgressHeaderPreview() {
     TaskColumnHeader(
         taskState = TaskState.PROGRESS,
         taskCount = 1,
     )
 }
 
-@Preview
+@Preview(widthDp = 600)
 @Composable
-private fun TaskColumnPreview() {
+private fun TaskColumnDoneHeaderPreview() {
+    TaskColumnHeader(
+        taskState = TaskState.DONE,
+        taskCount = 1,
+    )
+}
+
+@Preview(widthDp = 600)
+@Composable
+private fun TaskColumnTodoHeaderPreview() {
+    TaskColumnHeader(
+        taskState = TaskState.TODO,
+        taskCount = 1,
+    )
+}
+
+@Preview(heightDp = 400)
+@Composable
+private fun TaskColumnTodoPreview() {
+    val tasks = listOf(
+        TaskCardData(
+            title = Title(value = "제목"),
+            description = Description(value = "설명"),
+            tags = Tags(value = "ds"),
+            task = TaskState.PROGRESS,
+            profile = ProfileState.DINO,
+        ),
+    )
+    TaskColumn(
+        tasks = tasks,
+        taskState = TaskState.TODO,
+    )
+}
+
+@Preview(heightDp = 400)
+@Composable
+private fun TaskColumnProgressPreview() {
+    val tasks = listOf(
+        TaskCardData(
+            title = Title(value = "제목"),
+            description = Description(value = "설명"),
+            tags = Tags(value = "ds"),
+            task = TaskState.PROGRESS,
+            profile = ProfileState.DINO,
+        ),
+    )
+    TaskColumn(
+        tasks = tasks,
+        taskState = TaskState.PROGRESS,
+    )
+}
+
+@Preview(heightDp = 400)
+@Composable
+private fun TaskColumnDonePreview() {
     val tasks = listOf(
         TaskCardData(
             title = Title(value = "제목"),

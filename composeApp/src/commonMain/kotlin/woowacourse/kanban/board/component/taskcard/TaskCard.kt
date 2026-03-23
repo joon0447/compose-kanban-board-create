@@ -67,3 +67,81 @@ private fun TaskCardPreview() {
         ),
     )
 }
+
+@Preview
+@Composable
+private fun TaskCardEmptyDescriptionPreview() {
+    TaskCard(
+        data = TaskCardData(
+            title = Title(value = "LazyColumn 컴포넌트 구현"),
+            description = Description(value = ""),
+            tags = Tags(value = "컴포넌트,성능"),
+            task = TaskState.PROGRESS,
+            profile = ProfileState.DINO,
+        ),
+    )
+}
+
+@Preview
+@Composable
+private fun TaskCardEmptyTagPreview() {
+    TaskCard(
+        data = TaskCardData(
+            title = Title(value = "LazyColumn 컴포넌트 구현"),
+            description = Description(value = "세로 스크롤"),
+            tags = Tags(value = ""),
+            task = TaskState.PROGRESS,
+            profile = ProfileState.DINO,
+        ),
+    )
+}
+
+@Preview
+@Composable
+private fun TaskCardEmptyTagAndDescriptionPreview() {
+    TaskCard(
+        data = TaskCardData(
+            title = Title(value = "LazyColumn 컴포넌트 구현"),
+            description = Description(value = ""),
+            tags = Tags(value = ""),
+            task = TaskState.PROGRESS,
+            profile = ProfileState.DINO,
+        ),
+    )
+}
+
+@Preview
+@Composable
+private fun TaskCardLongTitlePreview() {
+    TaskCard(
+        data = TaskCardData(
+            title = Title(value = "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현"),
+            description = Description(value = ""),
+            tags = Tags(value = ""),
+            task = TaskState.PROGRESS,
+            profile = ProfileState.DINO,
+        ),
+    )
+}
+
+@Preview
+@Composable
+private fun TaskCardLongDescriptionPreview() {
+    TaskCard(
+        data = TaskCardData(
+            title = Title(value = "LazyColumn 컴포넌트 구현"),
+            description = Description(
+                value = "세로 스크롤  세로 스크롤" +
+                    "세로 스크롤 세로 스크롤세로 스크롤 " +
+                    " 세로 스크롤세로 스크롤 세로 스크롤" +
+                    "세로 스크롤  세로 스크롤세로 스크롤 " +
+                    "세로 스크롤세로 스크롤  세로 스크롤" +
+                    "세로 스크롤 세로 스크롤세로 스크롤" +
+                    "  세로 스크롤세로 스크롤 세로 스크롤"
+            ),
+            tags = Tags(value = ""),
+            task = TaskState.PROGRESS,
+            profile = ProfileState.DINO,
+        ),
+    )
+}

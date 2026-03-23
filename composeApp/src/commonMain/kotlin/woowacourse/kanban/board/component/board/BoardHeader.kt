@@ -191,3 +191,54 @@ private fun BoardHeaderPreview() {
         onClickCreateTask = {},
     )
 }
+
+@Preview(showBackground = true, widthDp = 600)
+@Composable
+private fun BoardHeaderNoTaskPreview() {
+    val boardState = BoardState()
+
+    BoardHeader(
+        doneRate = boardState.calculateDoneRate(),
+        doneTasks = boardState.doneTasks.size,
+        totalTasks = boardState.totalTaskCount,
+        onClickCreateTask = {},
+    )
+}
+
+@Preview(showBackground = true, widthDp = 600)
+@Composable
+private fun BoardHeaderAllTaskDonePreview() {
+    val boardState = BoardState()
+    val task1 = TaskCardData(
+        title = woowacourse.kanban.board.model.modal.Title(value = "업무1"),
+        description = Description(""),
+        tags = Tags(value = "컴포넌트"),
+        task = TaskState.DONE,
+        profile = ProfileState.DINO,
+    )
+    val task2 = TaskCardData(
+        title = woowacourse.kanban.board.model.modal.Title(value = "업무2"),
+        description = Description(""),
+        tags = Tags(value = "컴포넌트"),
+        task = TaskState.DONE,
+        profile = ProfileState.DINO,
+    )
+    val task3 = TaskCardData(
+        title = woowacourse.kanban.board.model.modal.Title(value = "업무3"),
+        description = Description(""),
+        tags = Tags(value = "컴포넌트"),
+        task = TaskState.DONE,
+        profile = ProfileState.DINO,
+    )
+
+    boardState.addCard(task1)
+    boardState.addCard(task2)
+    boardState.addCard(task3)
+
+    BoardHeader(
+        doneRate = boardState.calculateDoneRate(),
+        doneTasks = boardState.doneTasks.size,
+        totalTasks = boardState.totalTaskCount,
+        onClickCreateTask = {},
+    )
+}
