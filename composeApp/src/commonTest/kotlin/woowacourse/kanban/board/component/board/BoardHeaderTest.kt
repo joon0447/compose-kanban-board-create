@@ -18,7 +18,7 @@ class BoardHeaderTest {
 
         setContent {
             BoardHeader(
-                doneRate = 0,
+                doneRate = 0f,
                 doneTasks = 0,
                 totalTasks = 0,
                 onClickCreateTask = { clicked = true },
@@ -36,7 +36,7 @@ class BoardHeaderTest {
 
         setContent {
             BoardHeader(
-                doneRate = 0,
+                doneRate = 0f,
                 doneTasks = 0,
                 totalTasks = 10,
                 onClickCreateTask = {}
@@ -51,7 +51,7 @@ class BoardHeaderTest {
     fun `4개 업무 중 2개 완료된 업무가 있을때 50%가 출력된다`() = runComposeUiTest {
         setContent {
             BoardHeader(
-                doneRate = 50,
+                doneRate = 0.5f,
                 doneTasks = 5,
                 totalTasks = 10,
                 onClickCreateTask = {}
@@ -66,7 +66,7 @@ class BoardHeaderTest {
     fun `10개 완료된 업무가 있으면, 10이 출력된다`() = runComposeUiTest {
         setContent {
             BoardHeader(
-                doneRate = 50,
+                doneRate = 0.5f,
                 doneTasks = 10,
                 totalTasks = 20,
                 onClickCreateTask = {}
@@ -81,7 +81,7 @@ class BoardHeaderTest {
     fun `등록된 태스크가 10개면 10이 출력된다`() = runComposeUiTest {
         setContent {
             BoardHeader(
-                doneRate = 50,
+                doneRate = 0.5f,
                 doneTasks = 5,
                 totalTasks = 10,
                 onClickCreateTask = {}

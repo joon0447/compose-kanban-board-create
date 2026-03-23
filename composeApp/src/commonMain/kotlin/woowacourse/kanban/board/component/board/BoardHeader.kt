@@ -28,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.serialization.StringFormat
 import woowacourse.kanban.board.Gray10
 import woowacourse.kanban.board.Gray30
 import woowacourse.kanban.board.component.ComponentText
@@ -37,10 +38,11 @@ import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.taskcard.TaskCardData
+import kotlin.math.roundToInt
 
 @Composable
 fun BoardHeader(
-    doneRate: Int,
+    doneRate: Float,
     doneTasks: Int,
     totalTasks: Int,
     onClickCreateTask: () -> Unit,
@@ -61,22 +63,16 @@ fun BoardHeader(
                 onClickCreateTask = onClickCreateTask,
                 modifier = Modifier.fillMaxWidth(),
             )
-            ProgressBar(
-                doneCount = doneTasks,
-                totalCount = totalTasks,
-            )
+            ProgressBar(progress = doneRate)
         }
     }
 }
 
 @Composable
 private fun ProgressBar(
-    doneCount: Int,
-    totalCount: Int,
+    progress: Float,
     modifier: Modifier = Modifier,
 ) {
-    val progress = if (totalCount == 0) 0f else doneCount.toFloat() / totalCount.toFloat()
-
     LinearProgressIndicator(
         gapSize = 0.dp,
         strokeCap = StrokeCap.Square,
@@ -93,11 +89,13 @@ private fun ProgressBar(
 @Composable
 private fun BoardHeaderTitle(
     doneTasks: Int,
-    doneRate: Int,
+    doneRate: Float,
     totalTasks: Int,
     onClickCreateTask: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val doneRateFormat = "${(doneRate * 100).roundToInt()}%"
+
     Row(
         modifier = modifier
             .fillMaxWidth(),
@@ -112,7 +110,7 @@ private fun BoardHeaderTitle(
                 color = Gray10,
             )
             Text(
-                text = "${ComponentText.BOARD_HEADER_PROGRESS} $doneRate% ($doneTasks/$totalTasks)",
+                text = "${ComponentText.BOARD_HEADER_PROGRESS} $doneRateFormat ($doneTasks/$totalTasks)",
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Normal,
                 color = Gray30,
@@ -188,7 +186,7 @@ private fun BoardHeaderPreview() {
     boardState.addCard(task3)
 
     BoardHeader(
-        doneRate = boardState.calculateDoneRate().toInt(),
+        doneRate = boardState.calculateDoneRate(),
         doneTasks = boardState.doneTasks.size,
         totalTasks = boardState.totalTaskCount,
         onClickCreateTask = {},

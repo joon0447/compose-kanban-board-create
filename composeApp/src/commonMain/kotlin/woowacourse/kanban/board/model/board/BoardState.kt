@@ -31,8 +31,7 @@ class BoardState {
     fun calculateDoneRate(): Float {
         val totalTasks = todoTasks.size + progressTasks.size + doneTasks.size
         if (totalTasks == 0) return 0f
-        val doneRate = doneTasks.size.toFloat() / totalTasks.toFloat()
-        return (doneRate * 100).roundToInt() / 100f * 100
+        return doneTasks.size.toFloat() / totalTasks.toFloat()
     }
 
     fun toggleShowModal() {

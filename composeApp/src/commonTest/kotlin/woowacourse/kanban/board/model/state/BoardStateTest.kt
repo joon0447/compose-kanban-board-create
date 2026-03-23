@@ -10,6 +10,7 @@ import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
+import kotlin.math.roundToInt
 
 class BoardStateTest {
     private lateinit var boardState: BoardState
@@ -59,7 +60,7 @@ class BoardStateTest {
     }
 
     @Test
-    fun `3개 업무 중 1개를 완료했을 때 완료율은 33%로 계산된다`() {
+    fun `4개 업무 중 2개를 완료했을 때 완료율은 50%로 계산된다`() {
         val task1 = TaskCardData(
             title = Title(value = "업무1"),
             description = Description(""),
@@ -83,10 +84,11 @@ class BoardStateTest {
         )
 
         boardState.addCard(task1)
+        boardState.addCard(task1)
         boardState.addCard(task2)
         boardState.addCard(task3)
 
-        assertThat(boardState.calculateDoneRate()).isEqualTo(33.0f)
+        assertThat(boardState.calculateDoneRate()).isEqualTo(0.50f)
     }
 
     @Test

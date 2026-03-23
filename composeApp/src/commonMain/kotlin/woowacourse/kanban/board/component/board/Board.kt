@@ -56,7 +56,7 @@ fun Board(
                 }
             }
             BoardHeader(
-                doneRate = boardState.calculateDoneRate().toInt(),
+                doneRate = boardState.calculateDoneRate(),
                 doneTasks = boardState.doneTasks.size,
                 totalTasks = boardState.totalTaskCount,
                 onClickCreateTask = { boardState.toggleShowModal() },
