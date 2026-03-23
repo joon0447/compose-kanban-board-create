@@ -28,7 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.serialization.StringFormat
+import kotlin.math.roundToInt
 import woowacourse.kanban.board.Gray10
 import woowacourse.kanban.board.Gray30
 import woowacourse.kanban.board.component.ComponentText
@@ -38,7 +38,6 @@ import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.taskcard.TaskCardData
-import kotlin.math.roundToInt
 
 @Composable
 fun BoardHeader(

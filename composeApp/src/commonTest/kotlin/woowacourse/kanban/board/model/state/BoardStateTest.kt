@@ -10,7 +10,6 @@ import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.Title
 import woowacourse.kanban.board.model.taskcard.TaskCardData
-import kotlin.math.roundToInt
 
 class BoardStateTest {
     private lateinit var boardState: BoardState

@@ -6,7 +6,6 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import kotlin.math.roundToInt
 import woowacourse.kanban.board.model.TaskState
 import woowacourse.kanban.board.model.taskcard.TaskCardData
 
