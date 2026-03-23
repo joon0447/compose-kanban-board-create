@@ -32,8 +32,8 @@ import kotlin.math.roundToInt
 import woowacourse.kanban.board.Gray10
 import woowacourse.kanban.board.Gray30
 import woowacourse.kanban.board.component.ComponentText
+import woowacourse.kanban.board.component.state.BoardState
 import woowacourse.kanban.board.model.TaskState
-import woowacourse.kanban.board.model.board.BoardState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
@@ -187,7 +187,7 @@ private fun BoardHeaderPreview() {
     BoardHeader(
         doneRate = boardState.calculateDoneRate(),
         doneTasks = boardState.doneTasks.size,
-        totalTasks = boardState.totalTaskCount,
+        totalTasks = boardState.allTasksCount,
         onClickCreateTask = {},
     )
 }
@@ -200,7 +200,7 @@ private fun BoardHeaderNoTaskPreview() {
     BoardHeader(
         doneRate = boardState.calculateDoneRate(),
         doneTasks = boardState.doneTasks.size,
-        totalTasks = boardState.totalTaskCount,
+        totalTasks = boardState.allTasksCount,
         onClickCreateTask = {},
     )
 }
@@ -238,7 +238,7 @@ private fun BoardHeaderAllTaskDonePreview() {
     BoardHeader(
         doneRate = boardState.calculateDoneRate(),
         doneTasks = boardState.doneTasks.size,
-        totalTasks = boardState.totalTaskCount,
+        totalTasks = boardState.allTasksCount,
         onClickCreateTask = {},
     )
 }

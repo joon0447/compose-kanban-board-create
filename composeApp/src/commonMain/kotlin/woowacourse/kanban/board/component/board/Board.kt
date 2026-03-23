@@ -13,7 +13,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import woowacourse.kanban.board.component.ComponentText
 import woowacourse.kanban.board.component.modal.Modal
-import woowacourse.kanban.board.model.board.rememberBoardState
+import woowacourse.kanban.board.component.state.rememberBoardState
 
 @Composable
 fun Board(
@@ -58,7 +58,7 @@ fun Board(
             BoardHeader(
                 doneRate = boardState.calculateDoneRate(),
                 doneTasks = boardState.doneTasks.size,
-                totalTasks = boardState.totalTaskCount,
+                totalTasks = boardState.allTasksCount,
                 onClickCreateTask = { boardState.toggleShowModal() },
             )
             TaskColumnSection(

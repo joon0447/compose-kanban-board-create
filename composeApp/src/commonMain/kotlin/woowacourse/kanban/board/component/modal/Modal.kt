@@ -18,7 +18,7 @@ import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.Tags
 import woowacourse.kanban.board.model.modal.TextInputState
 import woowacourse.kanban.board.model.modal.Title
-import woowacourse.kanban.board.model.modal.rememberModalState
+import woowacourse.kanban.board.component.state.rememberModalState
 import woowacourse.kanban.board.model.taskcard.TaskCardData
 
 @Composable

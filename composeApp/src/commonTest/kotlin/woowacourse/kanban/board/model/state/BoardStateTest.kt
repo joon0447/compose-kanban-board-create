@@ -3,8 +3,8 @@ package woowacourse.kanban.board.model.state
 import kotlin.test.Test
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
+import woowacourse.kanban.board.component.state.BoardState
 import woowacourse.kanban.board.model.TaskState
-import woowacourse.kanban.board.model.board.BoardState
 import woowacourse.kanban.board.model.modal.Description
 import woowacourse.kanban.board.model.modal.ProfileState
 import woowacourse.kanban.board.model.modal.Tags
@@ -118,7 +118,7 @@ class BoardStateTest {
         boardState.addCard(task2)
         boardState.addCard(task3)
 
-        assertThat(boardState.totalTaskCount).isEqualTo(3)
+        assertThat(boardState.allTasksCount).isEqualTo(3)
     }
 
     @Test
