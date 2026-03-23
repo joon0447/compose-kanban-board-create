@@ -1,6 +1,7 @@
 package woowacourse.kanban.board.component.board
 
 import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -63,7 +64,7 @@ class BoardHeaderTest {
     }
 
     @Test
-    fun `10개 완료된 업무가 있으면, 10이 출력된다`() = runComposeUiTest {
+    fun `20개 중 10개 업무가 완료이면 완료 업무수가 10으로 출력된다`() = runComposeUiTest {
         setContent {
             BoardHeader(
                 doneRate = 0.5f,
@@ -73,8 +74,7 @@ class BoardHeaderTest {
             )
         }
 
-        onNodeWithText(ComponentText.BOARD_HEADER_PROGRESS, substring = true)
-            .assertTextContains("10", substring = true)
+        onNodeWithText("완료율: 50% (10/20)").assertIsDisplayed()
     }
 
     @Test
@@ -88,7 +88,6 @@ class BoardHeaderTest {
             )
         }
 
-        onNodeWithText(ComponentText.BOARD_HEADER_PROGRESS, substring = true)
-            .assertTextContains("10", substring = true)
+        onNodeWithText("완료율: 50% (5/10)").assertIsDisplayed()
     }
 }
